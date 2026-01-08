@@ -1,0 +1,49 @@
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bat-container {
+    transform-origin: 50% 20%;
+    filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.356));
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand-name {
+    font-size: 3rem;
+    font-weight: 500;
+    background: linear-gradient(to right, #ff3a30, #ff9409);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: fantasy;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #585858;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    font-style: italic;
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Search, ShoppingCart, Menu, X } from 'lucide-react';
 import './Header.css';
-import logo from '../Img/Main-Logo.PNG';
+import logo from '../Img/Main-Logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="header-container">
+      <div className="header-container container">
         {/* Left: Logo */}
         <div className="logo-container">
           <NavLink to="/">
