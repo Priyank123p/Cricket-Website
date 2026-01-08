@@ -1,0 +1,304 @@
+.product-page-container {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+/* Filter & Sort Section */
+.filter-sort-container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+.filter-group h6 {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.filter-select {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0.5rem;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.filter-select:focus {
+    border-color: #c54039;
+}
+
+.sort-dropdown {
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+}
+
+/* Product Card */
+.product-card-wrapper {
+    perspective: 1000px;
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1rem;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Image Wrapper & Zoom Effect */
+.product-img-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    aspect-ratio: 1 / 1;
+    background: #f9f9f9;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.08);
+}
+
+/* Badges */
+.product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.badge-new {
+    background: #28a745;
+    color: #fff;
+}
+
+.badge-hot {
+    background: #ffc107;
+    color: #333;
+}
+
+.badge-sale {
+    background: #c54039;
+    color: #fff;
+}
+
+/* Content */
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: #222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-specs {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 0.75rem;
+}
+
+.product-price-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.current-price {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #c54039;
+}
+
+.old-price {
+    font-size: 0.9rem;
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.product-rating {
+    color: #ffc107;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Add to Cart Button */
+.btn-add-cart {
+    margin-top: auto;
+    width: 100%;
+    background: #c54039;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    opacity: 0.9;
+}
+
+.btn-add-cart:hover {
+    background: #a9322c;
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.btn-add-cart:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (min-width: 992px) {
+    .btn-add-cart {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    .product-card:hover .btn-add-cart {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Branding / Advertisement Section */
+.branding-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    margin: 3rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.branding-content {
+    position: relative;
+    z-index: 2;
+}
+
+.branding-title {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(to right, #ff3a30, #ff9409);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.branding-text {
+    font-size: 1.2rem;
+    color: rgb(176, 176, 176);
+    margin-bottom: 2rem;
+}
+
+.branding-btn {
+    background: #c54039;
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.branding-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(197, 64, 57, 0.6);
+    background: #d64a42;
+    color: #fff;
+}
+
+.branding-img-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Trust Section */
+.trust-section {
+    background: #fff;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid #eee;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.trust-icon {
+    color: #c54039;
+    margin-bottom: 0.5rem;
+}
+
+.trust-text {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* =========================================
+   Responsive Adjustments
+   ========================================= */
+@media (max-width: 768px) {
+    .branding-title {
+        font-size: 2rem;
+    }
+
+    .filter-sort-container {
+        padding: 1rem;
+    }
+}

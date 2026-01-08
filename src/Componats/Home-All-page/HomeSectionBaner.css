@@ -66,13 +66,11 @@
     backdrop-filter: blur(10px);
 }
 
-.pulse-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--accent-color);
+.rotating-ball {
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--accent-color);
-    animation: pulse 2s infinite;
+    animation: ballSpin 2s linear infinite;
 }
 
 .banner-title {
@@ -387,5 +385,15 @@
 
     .card-2 {
         display: none;
+    }
+}
+
+@keyframes ballSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }

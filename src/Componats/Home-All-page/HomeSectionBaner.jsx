@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import SportsHeroImg from '../../Img/HomeSectionBaner-IMG/IMG-20250722-WA0001.jpg';
 import AthleteActionImg from '../../Img/HomeSectionBaner-IMG/Athlete Action-IMG.jpg';
+import CricketBallImg from '../../Img/Courser/pngimg.com - cricket_PNG95.png';
 
 const HomeSectionBaner = () => {
     return (
@@ -13,7 +14,7 @@ const HomeSectionBaner = () => {
                     <div className="home-banner-container">
                         <div className="home-banner-content">
                             <div className="banner-badge">
-                                <span className="pulse-dot"></span>
+                                <img src={CricketBallImg} alt="Cricket Ball" className="rotating-ball" />
                                 PREMIUM SPORTS GEAR
                             </div>
 
