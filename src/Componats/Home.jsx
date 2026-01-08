@@ -5,6 +5,7 @@ import { Trophy, Zap, ShieldCheck } from 'lucide-react';
 import CricketerImg from '../Img/Cricketer-IMG/pngimg.com - cricket_PNG92.png';
 import Features from './Home-All-page/Features';
 import NewArivals from './Home-All-page/NewArivals';
+import HomeSectionBaner from './Home-All-page/HomeSectionBaner';
 
 const Home = () => {
   // Mouse Motion Values
@@ -67,17 +68,6 @@ const Home = () => {
   return (
     <>
       <div className="home-container container" onMouseMove={handleMouseMove}>
-        <motion.div
-          className="branded-text-bg"
-          variants={bgTextVariants}
-          initial="hidden"
-          whileInView="visible"
-          style={{ x: bgX, y: bgY }}
-          viewport={{ once: true }}
-        >
-          PREMIUM <br /> CRICKET GEAR
-        </motion.div>
-
         <div className="home-content">
           <motion.div
             className="text-section"
@@ -126,6 +116,7 @@ const Home = () => {
       </div>
       <Features />
       <NewArivals />
+      <HomeSectionBaner />
     </>
   );
 }

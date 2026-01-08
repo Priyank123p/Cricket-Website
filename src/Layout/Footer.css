@@ -16,7 +16,6 @@
     overflow: hidden;
 }
 
-/* Gradient Top Border */
 .footer-gradient-border {
     position: absolute;
     top: 0;
@@ -35,7 +34,6 @@
     padding: 0 1rem;
 }
 
-/* Columns */
 .footer-col-brand {
     grid-column: span 12;
 }
@@ -73,7 +71,7 @@
 
 /* Typography */
 .footer-brand h2 {
-    font-family: var(--footer-font-heading);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: linear-gradient(to right, #ff3a30, #ff9409);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -110,7 +108,6 @@
     border-radius: 2px;
 }
 
-/* Links */
 .footer-links {
     list-style: none;
     padding: 0;
@@ -154,7 +151,6 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
-    group: true;
 }
 
 .contact-icon-wrapper {
