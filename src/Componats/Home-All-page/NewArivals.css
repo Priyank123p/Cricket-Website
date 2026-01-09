@@ -135,35 +135,7 @@
     letter-spacing: 0.5px;
 }
 
-.wishlist-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ccc;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10;
-    opacity: 0;
-    transform: translateX(20px);
-}
 
-.product-card:hover .wishlist-btn {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.wishlist-btn:hover {
-    color: #ff3e6c;
-    background: #fff0f5;
-}
 
 /* Add to Cart Overlay */
 .add-to-cart-overlay {
@@ -266,11 +238,7 @@
         color: #333;
     }
 
-    .wishlist-btn {
-        opacity: 1 !important;
-        transform: translateX(0) !important;
-        background: rgba(255, 255, 255, 0.9);
-    }
+
 }
 
 @media (max-width: 600px) {

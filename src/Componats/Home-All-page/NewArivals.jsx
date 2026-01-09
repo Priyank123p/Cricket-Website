@@ -111,9 +111,7 @@ const NewArivals = () => {
             >
               <div className="image-wrapper">
                 <span className="badge-new">New</span>
-                <button className="wishlist-btn" aria-label="Add to wishlist">
-                  <Heart size={20} />
-                </button>
+
                 <img src={product.image} alt={product.name} className="product-image" />
 
                 <div className="add-to-cart-overlay">
