@@ -4,7 +4,7 @@ import { Container, Row, Col, Dropdown, Spinner } from 'react-bootstrap';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Star, Check, Filter, ArrowRight, ShieldCheck, Truck, RefreshCw, CreditCard } from 'lucide-react';
 import { useCart } from './Context/CartContext';
-import brandingImg from '../Img/Branding-IMG/Cricket_Bat_Page.webp';
+import brandingImg from '../Img/Branding-IMG/Branding-IMG2.jpeg';
 import productBanner from '../Img/product-banner.png';
 import './Product.css';
 

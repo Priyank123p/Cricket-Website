@@ -2,10 +2,11 @@ import React from 'react';
 import './Home.css';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { Trophy, Zap, ShieldCheck } from 'lucide-react';
-import CricketerImg from '../Img/Cricketer-IMG/pngimg.com - cricket_PNG92.png';
+import CricketerImg from '../Img/Cricketer-IMG/Branding.png';
 import Features from './Home-All-page/Features';
 import NewArivals from './Home-All-page/NewArivals';
 import HomeSectionBaner from './Home-All-page/HomeSectionBaner';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   // Mouse Motion Values
@@ -18,13 +19,14 @@ const Home = () => {
   const mouseY = useSpring(y, springConfig);
 
   // Transform values for parallax effect
+  // Transform values for parallax effect
   // Background text moves opposite to mouse (slower)
-  const bgX = useTransform(mouseX, [-0.5, 0.5], ["15px", "-15px"]);
-  const bgY = useTransform(mouseY, [-0.5, 0.5], ["15px", "-15px"]);
+  const bgX = useTransform(mouseX, [-0.5, 0.5], ["10px", "-10px"]);
+  const bgY = useTransform(mouseY, [-0.5, 0.5], ["10px", "-10px"]);
 
-  // Image moves with mouse (slightly faster)
-  const imgX = useTransform(mouseX, [-0.5, 0.5], ["-25px", "25px"]);
-  const imgY = useTransform(mouseY, [-0.5, 0.5], ["-25px", "25px"]);
+  // Image moves with mouse (slightly faster but reduced speed)
+  const imgX = useTransform(mouseX, [-0.5, 0.5], ["-15px", "15px"]);
+  const imgY = useTransform(mouseY, [-0.5, 0.5], ["-15px", "15px"]);
 
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
@@ -67,50 +69,67 @@ const Home = () => {
 
   return (
     <>
-      <div className="home-container container" onMouseMove={handleMouseMove}>
+      <div className="home-container" onMouseMove={handleMouseMove}>
+        {/* Background Geometric Overlay handled by CSS ::before */}
+
         <div className="home-content">
+          {/* Text Content */}
           <motion.div
             className="text-section"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.h3 variants={textVariants}>RK Sports</motion.h3>
-            <motion.h1 variants={textVariants} transition={{ delay: 0.2 }}>COLLECTION</motion.h1>
+
+            <motion.h1 className="main-headline" variants={textVariants}>
+              UNLEASH <br />
+              <span className="highlight-text">THE POWER</span>
+            </motion.h1>
+
+            <motion.p
+              className="description-text"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              Experience the next generation of cricket equipment.
+              Used by legends, designed for champions. elevate your game today.
+            </motion.p>
 
             <motion.div
-              className="usp-section"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              viewport={{ once: true }}
+              className="stats-row"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
             >
-              <ul className="usp-list">
-                <li>
-                  <span className="usp-icon"><Trophy size={22} color="#ff6309ff" /></span>
-                  English Willow & Kashmir Willow Bats
-                </li>
-                <li>
-                  <span className="usp-icon"><Zap size={22} color="#ff6309ff" /></span>
-                  Perfect Balance & Maximum Power
-                </li>
-                <li>
-                  <span className="usp-icon"><ShieldCheck size={22} color="#ff6309ff" /></span>
-                  Tested Quality • Trusted by Players
-                </li>
-              </ul>
+              <div className="stat-item">
+                <span className="stat-number">5.0+</span>
+                <span className="stat-label">Willow Grade</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">25%</span>
+                <span className="stat-label">More Power</span>
+              </div>
+            </motion.div>
+
+            <motion.div className="cta-group">
+              <Link to="/product">
+                <button className="cta-btn primary-btn">
+                  <span>Shop Collection</span>
+                </button>
+              </Link>
             </motion.div>
           </motion.div>
 
+          {/* Image Section */}
           <motion.div
-            className="image-section"
-            variants={imageVariants}
-            initial="hidden"
-            whileInView="visible"
+            className="image-section-v2"
             style={{ x: imgX, y: imgY }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
           >
-            <img src={CricketerImg} alt="Cricketer" className="cricketer-img" />
+            <img src={CricketerImg} alt="Rishab Pant" className="hero-model-img" />
           </motion.div>
         </div>
       </div>

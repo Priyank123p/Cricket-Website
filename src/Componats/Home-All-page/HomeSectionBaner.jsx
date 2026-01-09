@@ -2,7 +2,7 @@ import React from 'react';
 import './HomeSectionBaner.css';
 import { Link } from 'react-router-dom';
 
-import SportsHeroImg from '../../Img/HomeSectionBaner-IMG/IMG-20250722-WA0001.jpg';
+import SportsHeroImg from '../../Img/HomeSectionBaner-IMG/Sports Hero-IMG.jpg';
 import AthleteActionImg from '../../Img/HomeSectionBaner-IMG/Athlete Action-IMG.jpg';
 import CricketBallImg from '../../Img/Courser/pngimg.com - cricket_PNG95.png';
 
@@ -34,15 +34,8 @@ const HomeSectionBaner = () => {
                                 <Link to="/product">
                                     <button className="cta-btn primary-btn">
                                         <span>Shop Collection</span>
-                                        <div className="btn-glow"></div>
                                     </button>
                                 </Link>
-                                <button className="cta-btn secondary-btn">
-                                    <span>Watch Trailer</span>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                                    </svg>
-                                </button>
                             </div>
 
                             <div className="banner-stats">
