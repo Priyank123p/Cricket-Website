@@ -1,10 +1,10 @@
 import React from 'react';
 import { useCart } from './Context/CartContext';
 import './AddCart.css';
-import { Trash2 } from 'lucide-react';
+import { Trash2, Plus, Minus } from 'lucide-react';
 
 const AddCart = () => {
-  const { cartItems, removeFromCart, getCartTotal } = useCart();
+  const { cartItems, removeFromCart, getCartTotal, increaseQuantity, decreaseQuantity } = useCart();
 
   return (
     <div className="cart-page">
@@ -25,7 +25,23 @@ const AddCart = () => {
                   <div className="cart-item-details">
                     <h3 className="cart-item-name">{item.name}</h3>
                     <p className="cart-item-price">{item.price}</p>
-                    <p className="cart-item-info">Quantity: {item.quantity}</p>
+                    <p className="cart-item-price">{item.price}</p>
+                    <div className="quantity-controls">
+                      <button
+                        className="qty-btn"
+                        onClick={() => decreaseQuantity(item.id)}
+                        disabled={item.quantity <= 1}
+                      >
+                        <Minus size={16} />
+                      </button>
+                      <span className="quantity-value">{item.quantity}</span>
+                      <button
+                        className="qty-btn"
+                        onClick={() => increaseQuantity(item.id)}
+                      >
+                        <Plus size={16} />
+                      </button>
+                    </div>
                   </div>
                   <button
                     className="remove-btn"

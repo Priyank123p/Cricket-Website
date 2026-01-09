@@ -17,7 +17,7 @@ const ContactUs = () => {
               <MapPin size={24} />
             </div>
             <h3>Address</h3>
-            <p>316, 317 Shivalik Satyamev, Ambli - Bopal Rd, Crossroad, Bopal, Ahmedabad, Gujarat 380058</p>
+            <p>318 Shivalik Satyamev, Ambli - Bopal Rd, Crossroad, Bopal, Ahmedabad, Gujarat 380058</p>
           </div>
 
           <div className="info-card">
@@ -41,7 +41,7 @@ const ContactUs = () => {
               <Clock size={24} />
             </div>
             <h3>Working Hours</h3>
-            <p>Mon – Sat : 10:00 AM – 8:00 PM</p>
+            <p>Mon – Fri : 09:00 AM – 07:00 PM</p>
           </div>
         </div>
 

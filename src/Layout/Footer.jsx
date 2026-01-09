@@ -66,7 +66,7 @@ const Footer = () => {
             <div className="adress-icon-wrapper">
               <MapPin size={20} />
             </div>
-            <span>317 Shivalik Satymev,Ambli-Bopal Rd,Crossroad,Bopal,Ahmedabad,Gujarat 380058</span>
+            <span>318 Shivalik Satymev,Ambli-Bopal Rd,Crossroad,Bopal,Ahmedabad,Gujarat 380058</span>
           </div>
           <div className="contact-item">
             <div className="contact-icon-wrapper">
