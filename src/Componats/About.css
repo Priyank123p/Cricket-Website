@@ -1,0 +1,288 @@
+.section {
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.about-hero {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    color: #ddd;
+}
+
+.hero-btn {
+    background: #ff4757;
+    /* Brand Color */
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-20deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    20% {
+        left: 200%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+/* 2. Who We Are */
+.who-we-are h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2f3542;
+}
+
+.who-we-are p {
+    color: #57606f;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.img-wrapper img {
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+/* 3. Craftsmanship */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.craft-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #f1f2f6;
+}
+
+.icon-box {
+    color: #ff4757;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.craft-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.craft-card p {
+    color: #747d8c;
+    font-size: 0.95rem;
+}
+
+/* 4. Why Choose Us */
+.why-choose-us {
+    background: #2f3542;
+    color: white;
+}
+
+.section-title-white {
+    color: white;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.check-icon {
+    background: #2ed573;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* 5. Mission & Vision */
+.mission-box,
+.vision-box {
+    padding: 80px 50px;
+    color: white;
+}
+
+.mission-box {
+    background: #ff4757;
+}
+
+.vision-box {
+    background: #2f3542;
+}
+
+.mission-box h3,
+.vision-box h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.mission-box p,
+.vision-box p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* 6. Stats Section */
+.stat-item {
+    margin-bottom: 30px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ff4757;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #57606f;
+    font-weight: 600;
+}
+
+/* 7. CTA */
+.cta-section {
+    background: #f1f2f6;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #2f3542;
+}
+
+.cta-content p {
+    font-size: 1.3rem;
+    color: #57606f;
+    margin-bottom: 40px;
+}
+
+.cta-btn {
+    background: #2f3542;
+    color: white;
+    padding: 18px 50px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-box,
+    .vision-box {
+        padding: 60px 30px;
+    }
+}
