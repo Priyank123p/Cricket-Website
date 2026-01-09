@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Hammer, Star, ShieldCheck, Zap } from 'lucide-react';
 import aboutImage from '../Img/Branding-IMG/Branding-IMG2.jpeg';
 
+import topBannerImage from '../Img/AboutUs-IMG/Top-Banar-IMG.avif';
+
 const AboutUs = () => {
   const { scrollY } = useScroll();
   const yRange = useTransform(scrollY, [0, 500], [0, 200]);
@@ -19,7 +21,7 @@ const AboutUs = () => {
           style={{ y: yRange, scale: 1.1 }}
         >
           {/* Placeholder for Cricket Pitch / Bat Close-up */}
-          <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=2067&auto=format&fit=crop" alt="Cricket Pitch" />
+          <img src={topBannerImage} alt="Cricket Pitch" />
           <div className="hero-overlay"></div>
         </motion.div>
 
