@@ -314,6 +314,49 @@
     .stat-number {
         font-size: 2.5rem;
     }
+
+    /* Mobile-only Background Grid for Why Choose Us */
+    .why-choose-us {
+        position: relative;
+        overflow: hidden;
+        /* Ensure pseudo-element doesn't overflow */
+    }
+
+    .why-choose-us::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+        -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* Color Shade Overlay */
+    .why-choose-us::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at center, rgba(255, 71, 87, 0.15) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* Ensure content is above background */
+    .why-choose-us>* {
+        position: relative;
+        z-index: 1;
+    }
 }
 
 @media (max-width: 480px) {
