@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Search, ShoppingCart, Menu, X } from 'lucide-react';
 import './Header.css';
-import logo from '../Img/Main-Logo.png';
+import logo from '../Img/Logo/Main-Logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
