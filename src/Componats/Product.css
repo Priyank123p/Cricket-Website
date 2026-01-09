@@ -4,6 +4,20 @@
     padding-bottom: 4rem;
 }
 
+/* Hero Banner */
+.product-hero-banner {
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+}
+
+.product-hero-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .filter-sort-container {
     background: #ffffff;
     border-radius: 12px;
@@ -42,6 +56,7 @@
 /* Product Card */
 .product-card-wrapper {
     perspective: 1000px;
+    height: 100%;
 }
 
 .product-card {
@@ -292,6 +307,30 @@
 /* =========================================
    Responsive Adjustments
    ========================================= */
+@media (max-width: 1024px) {
+
+    /* Ensure buttons are visible on touch devices (Tablets & Mobile) */
+    .btn-add-cart {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+
+    .product-card:hover .btn-add-cart {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .branding-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .branding-content {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .branding-title {
         font-size: 2rem;
@@ -300,18 +339,22 @@
     .filter-sort-container {
         padding: 1rem;
     }
+
+    .product-page-container {
+        padding-bottom: 2rem;
+    }
 }
 
-/* Hero Banner */
-.product-hero-banner {
-    position: relative;
-    width: 100%;
-    margin-top: 0;
-}
+@media (max-width: 480px) {
+    .product-card {
+        padding: 0.75rem;
+    }
 
-.product-hero-banner img {
-    width: 100%;
-    height: auto;
-    display: block;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    .product-title {
+        font-size: 1rem;
+    }
+
+    .current-price {
+        font-size: 1.1rem;
+    }
 }

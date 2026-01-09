@@ -14,12 +14,14 @@
 .header {
     background-color: #111;
     box-shadow: 0 2px 4px rgba(121, 121, 121, 0.368);
-    padding: 0rem 4rem 0rem 4rem;
+    padding: 0 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
     height: 80px;
+    display: flex;
+    align-items: center;
 }
 
 .header-container {
@@ -27,6 +29,7 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
     height: 100%;
 }
@@ -36,18 +39,18 @@
     flex: 0 0 auto;
     position: relative;
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .logo-img {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
     height: 235px;
     width: auto;
     object-fit: contain;
     z-index: 1100;
     max-height: none;
+    /* Adjusted for better positioning */
+    display: block;
 }
 
 .nav-menu {
@@ -152,5 +155,105 @@
 .mobile-menu-icon {
     display: none;
     cursor: pointer;
-    color: #333;
+    color: #e0e0e0;
+    /* Changed to match theme */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .nav-list {
+        gap: 2rem;
+    }
+
+    .search-bar input {
+        width: 150px;
+    }
+
+    .search-bar input:focus {
+        width: 180px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .header {
+        padding: 0 1.5rem;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        z-index: 2000;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 80px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        transition: right 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        z-index: 1050;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    /* Adjust Logo for Mobile */
+    .logo-img {
+        height: 120px;
+        /* Reduced logic height */
+        position: static;
+        /* Reset absolute positioning */
+        transform: none;
+    }
+
+    /* Search Bar Adjustment */
+    .search-bar {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .search-bar input {
+        width: 0;
+        opacity: 0;
+        padding: 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Expand search on focus or logic change if needed, 
+       but for now let's keep it collapsible or small icon */
+    .search-bar:focus-within input,
+    .search-bar input:focus {
+        width: 120px;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-right {
+        gap: 1rem;
+    }
+
+    .logo-img {
+        height: 80px;
+    }
 }

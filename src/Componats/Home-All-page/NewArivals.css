@@ -51,7 +51,7 @@
 
 .section-title {
     font-size: 3rem;
-    font-weight: lighter;
+    font-weight: 600;
     background: linear-gradient(to right, #ff3a30, #ff9409);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -233,4 +233,62 @@
     font-size: 1.25rem;
     font-weight: 700;
     color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .products-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .background-text {
+        font-size: 5rem;
+    }
+
+    /* Force Add to Cart Overlay Visibility on Mobile/Tablet */
+    .add-to-cart-overlay {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        padding-bottom: 20px;
+    }
+
+    .add-btn {
+        width: 100%;
+        justify-content: center;
+        background-color: #fff;
+        color: #333;
+    }
+
+    .wishlist-btn {
+        opacity: 1 !important;
+        transform: translateX(0) !important;
+        background: rgba(255, 255, 255, 0.9);
+    }
+}
+
+@media (max-width: 600px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        /* Single card per row */
+    }
+
+    .background-text {
+        font-size: 3.5rem;
+        letter-spacing: 5px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .new-arrivals-section {
+        padding: 3rem 1rem;
+    }
 }

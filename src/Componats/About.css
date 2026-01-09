@@ -43,6 +43,7 @@
     z-index: 1;
     max-width: 800px;
     padding: 20px;
+    text-align: center;
 }
 
 .hero-content h1 {
@@ -57,12 +58,11 @@
 .hero-content p {
     font-size: 1.25rem;
     margin-bottom: 40px;
-    color: #ddd;
+    color: rgb(255, 255, 255)
 }
 
 .hero-btn {
     background: #ff4757;
-    /* Brand Color */
     color: white;
     border: none;
     padding: 15px 40px;
@@ -105,11 +105,11 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #2f3542;
+    color: #ffffff;
 }
 
 .who-we-are p {
-    color: #57606f;
+    color: #acacac;
     line-height: 1.8;
     font-size: 1.1rem;
 }
@@ -117,12 +117,14 @@
 .img-wrapper img {
     border-radius: 15px;
     transition: transform 0.3s;
+    width: 100%;
+    height: auto;
 }
 
 /* 3. Craftsmanship */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
@@ -272,7 +274,11 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    .section {
+        padding: 60px 0;
+    }
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -280,9 +286,49 @@
     .features-grid {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
 
     .mission-box,
     .vision-box {
-        padding: 60px 30px;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .cta-section {
+        padding: 60px 0;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 40px 0;
+    }
+
+    .hero-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    .who-we-are h2,
+    .mission-box h3,
+    .vision-box h3 {
+        font-size: 1.8rem;
     }
 }
