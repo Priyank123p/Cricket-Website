@@ -233,9 +233,7 @@ const BrandingSection = () => {
         <Col md={7} className="branding-content">
           <h2 className="branding-title">Power Your Game</h2>
           <p className="branding-text">Premium English Willow Bats used by international professionals. Experience specific engineering designed for maximum boundaries.</p>
-          <button className="branding-btn">
-            Explore Collection <ArrowRight size={20} className="ms-2" />
-          </button>
+
         </Col>
         <Col md={5}>
           <div className="branding-img-container">

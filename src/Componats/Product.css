@@ -247,26 +247,7 @@
 .branding-text {
     font-size: 1.2rem;
     color: rgb(176, 176, 176);
-    margin-bottom: 2rem;
-}
-
-.branding-btn {
-    background: #c54039;
-    color: #fff;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.branding-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(197, 64, 57, 0.6);
-    background: #d64a42;
-    color: #fff;
+    margin-bottom: 0;
 }
 
 .branding-img-container {
