@@ -44,7 +44,6 @@ const Product = () => {
   // Filter Logic
   const filteredProducts = PRODUCTS_DATA.filter(product => {
     if (filters.brand !== 'All' && product.brand !== filters.brand) return false;
-    // Simple price logic for demo (parsing strings)
     const price = parseInt(product.price.replace(/[^0-9]/g, ''));
     if (filters.priceRange === 'Under 10k' && price > 10000) return false;
     if (filters.priceRange === '10k - 20k' && (price < 10000 || price > 20000)) return false;
@@ -87,10 +86,6 @@ const Product = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="d-flex gap-3 flex-wrap">
-            <div className="d-flex align-items-center gap-2">
-              <Filter size={18} />
-              <span className="fw-bold">Filters:</span>
-            </div>
             <select className="filter-select" style={{ width: '150px' }} onChange={(e) => handleFilterChange('brand', e.target.value)}>
               <option value="All">All Brands</option>
               <option value="MRF">MRF</option>
