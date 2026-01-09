@@ -14,14 +14,12 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container container">
-        {/* Left: Logo */}
         <div className="logo-container">
           <NavLink to="/">
             <img src={logo} alt="Cricket Logo" className="logo-img" />
           </NavLink>
         </div>
 
-        {/* Center: Navigation Links */}
         <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <ul className="nav-list">
             <li className="nav-item">
