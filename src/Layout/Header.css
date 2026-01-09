@@ -106,38 +106,7 @@
     flex: 0 0 auto;
 }
 
-/* Search Bar */
-.search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #f5f5f5;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s ease;
-}
 
-.search-bar:focus-within {
-    background-color: #ffffff;
-}
-
-.search-bar input {
-    border: none;
-    background: transparent;
-    outline: none;
-    font-size: 0.9rem;
-    color: #383838;
-    width: 200px;
-    transition: width 0.3s ease;
-}
-
-.search-bar input:focus {
-    width: 230px;
-}
-
-.search-icon {
-    color: #666;
-    cursor: pointer;
-}
 
 /* Cart Icon */
 .cart-icon-container {
@@ -220,10 +189,9 @@
 
     /* Adjust Logo for Mobile */
     .logo-img {
-        height: 120px;
-        /* Reduced logic height */
+        height: 160px;
+        /* Increased from 120px */
         position: static;
-        /* Reset absolute positioning */
         transform: none;
     }
 
@@ -254,6 +222,7 @@
     }
 
     .logo-img {
-        height: 80px;
+        height: 120px;
+        /* Increased from 80px */
     }
 }

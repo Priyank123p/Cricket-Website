@@ -301,18 +301,21 @@
 @media (max-width: 768px) {
     .home-banner-container {
         grid-template-columns: 1fr;
-        padding-top: 4rem;
+        padding-top: 2rem;
         gap: 3rem;
     }
 
     .home-banner-visuals {
-        min-height: 400px;
+        min-height: 300px;
+        /* Reduced height for mobile */
         order: -1;
     }
 
     .banner-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
+        /* Adjusted for better fit */
         text-align: center;
+        margin-top: 1rem;
     }
 
     .home-banner-content {
@@ -332,10 +335,31 @@
         right: 0;
         transform: none;
         animation: none;
+        border-radius: 15px;
+        /* Softer radius for mobile */
     }
 
     .card-2 {
         display: none;
+    }
+
+    .banner-stats {
+        justify-content: center;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-title {
+        font-size: 2.2rem;
+    }
+
+    .banner-badge {
+        font-size: 0.8rem;
+    }
+
+    .home-banner-section {
+        padding: 2rem 1rem;
     }
 }
 

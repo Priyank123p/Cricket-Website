@@ -39,10 +39,7 @@ const Header = () => {
 
         {/* Right: Search & Cart */}
         <div className="header-right">
-          <div className="search-bar">
-            <input type="text" placeholder="Search..." />
-            <Search className="search-icon" size={20} />
-          </div>
+
 
           <NavLink to="/cart" className="cart-icon-container">
             <ShoppingCart size={24} />
