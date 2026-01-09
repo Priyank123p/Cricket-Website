@@ -4,7 +4,7 @@ import { Heart, ShoppingCart } from 'lucide-react';
 import './NewArivals.css';
 import { useCart } from '../Context/CartContext'; // Import useCart
 
-import Img1 from '../../Img/NewArivals-IMG/Gred1+ English-Willow-Wraith.webp';
+import Img1 from '../../Img/NewArivals-IMG/black_bat_all_sides_636x.webp';
 import Img2 from '../../Img/NewArivals-IMG/Grade4-English-Willow-Astral.webp';
 import Img3 from '../../Img/NewArivals-IMG/Grade-3-Willow.webp';
 import Img4 from '../../Img/NewArivals-IMG/Kashmir-Willow.webp';
@@ -12,9 +12,9 @@ import Img4 from '../../Img/NewArivals-IMG/Kashmir-Willow.webp';
 const products = [
   {
     id: 1,
-    name: "Wraith Grade 1+ English Willow",
+    name: "Hard Tennis Scoop Bat - Black Knight (WATERPROOF)",
     category: "English Willow",
-    price: "₹12,999",
+    price: "₹2,799",
     image: Img1,
   },
   {

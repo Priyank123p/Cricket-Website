@@ -45,7 +45,7 @@ const Footer = () => {
         >
           <h3 className="footer-heading">Quick Links</h3>
           <ul className="footer-links">
-            {['Home', 'Shop', 'New Arrivals', 'About Us', 'Contact'].map((item) => (
+            {['Home', 'Product', 'About Us', 'Contact Us'].map((item) => (
               <li key={item} className="footer-link-item">
                 <a href="#" className="footer-link">{item}</a>
               </li>

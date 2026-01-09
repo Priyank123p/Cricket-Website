@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Star, Check, Filter, ArrowRight, ShieldCheck, Truck, RefreshCw, CreditCard } from 'lucide-react';
 import { useCart } from './Context/CartContext';
 import brandingImg from '../Img/Branding-IMG/Cricket_Bat_Page.webp';
+import productBanner from '../Img/product-banner.png';
 import './Product.css';
 
 // Mock Data
@@ -68,10 +69,23 @@ const Product = () => {
 
   return (
     <div className="product-page-container">
-      <Container className="pt-5">
+      <motion.div
+        className="product-hero-banner mb-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <img src={productBanner} alt="Master the Game, Dominate the Field" className="img-fluid w-100" />
+      </motion.div>
+      <Container>
 
         {/* Filter & Sort Section */}
-        <div className="filter-sort-container d-flex flex-wrap justify-content-between align-items-center">
+        <motion.div
+          className="filter-sort-container d-flex flex-wrap justify-content-between align-items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <div className="d-flex gap-3 flex-wrap">
             <div className="d-flex align-items-center gap-2">
               <Filter size={18} />
@@ -106,7 +120,7 @@ const Product = () => {
               <option value="best-selling">Best Selling</option>
             </select>
           </div>
-        </div>
+        </motion.div>
 
         {/* Products Grid */}
         <Row className="g-4">
