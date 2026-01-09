@@ -138,13 +138,11 @@ body {
     clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 0 20px rgba(255, 77, 0, 0.4);
 }
 
 .primary-btn:hover {
     transform: translateY(-5px);
     background: #ff6a00;
-    box-shadow: 0 0 40px rgba(255, 77, 0, 0.6);
 }
 
 /* --- Image Section --- */
