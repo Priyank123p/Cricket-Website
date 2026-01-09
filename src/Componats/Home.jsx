@@ -13,18 +13,13 @@ const Home = () => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // Smooth spring animation for mouse movement
   const springConfig = { damping: 25, stiffness: 100 };
   const mouseX = useSpring(x, springConfig);
   const mouseY = useSpring(y, springConfig);
 
-  // Transform values for parallax effect
-  // Transform values for parallax effect
-  // Background text moves opposite to mouse (slower)
   const bgX = useTransform(mouseX, [-0.5, 0.5], ["10px", "-10px"]);
   const bgY = useTransform(mouseY, [-0.5, 0.5], ["10px", "-10px"]);
 
-  // Image moves with mouse (slightly faster but reduced speed)
   const imgX = useTransform(mouseX, [-0.5, 0.5], ["-15px", "15px"]);
   const imgY = useTransform(mouseY, [-0.5, 0.5], ["-15px", "15px"]);
 
@@ -39,7 +34,6 @@ const Home = () => {
     y.set(yPos);
   };
 
-  // Animation variants
   const textVariants = {
     hidden: { opacity: 0, y: -150 },
     visible: {
@@ -70,10 +64,8 @@ const Home = () => {
   return (
     <>
       <div className="home-container" onMouseMove={handleMouseMove}>
-        {/* Background Geometric Overlay handled by CSS ::before */}
 
         <div className="home-content">
-          {/* Text Content */}
           <motion.div
             className="text-section"
             initial="hidden"

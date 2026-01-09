@@ -40,11 +40,6 @@ const HomeSectionBaner = () => {
 
                             <div className="banner-stats">
                                 <div className="stat-item">
-                                    <h4>50k+</h4>
-                                    <p>Happy Clients</p>
-                                </div>
-                                <div className="stat-separator"></div>
-                                <div className="stat-item">
                                     <h4>120+</h4>
                                     <p>Premium Products</p>
                                 </div>
