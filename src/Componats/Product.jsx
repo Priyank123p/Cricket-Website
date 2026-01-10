@@ -10,20 +10,6 @@ import './Product.css';
 import * as XLSX from 'xlsx';
 import productDataFile from '../products.xlsx';
 
-import proPlayersImg from '../Img/Product-IMG/New Pro Players Edition-IMG.png';
-import premiumPlayersImg from '../Img/Product-IMG/New Premium Players-IMG.png';
-import cbsEditionImg from '../Img/Product-IMG/77 CBS Edition 7 Star-IMG.png';
-import cielFighterImg from '../Img/Product-IMG/Ciel Fighter AK 47 hard tennis cricket bat-IMG.jpeg';
-import goldEditionImg from '../Img/Product-IMG/Ciel Gold edition hard tennis cricket bat-IMG.jpeg';
-
-const IMAGE_MAP = {
-  "New Pro Players Edition-IMG.png": proPlayersImg,
-  "New Premium Players-IMG.png": premiumPlayersImg,
-  "77 CBS Edition 7 Star-IMG.png": cbsEditionImg,
-  "Ciel Fighter AK 47 hard tennis cricket bat-IMG.jpeg": cielFighterImg,
-  "Ciel Gold edition hard tennis cricket bat-IMG.jpeg": goldEditionImg
-};
-
 const Product = () => {
   const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({ brand: 'All', priceRange: 'All' });
@@ -40,10 +26,11 @@ const Product = () => {
         const sheet = workbook.Sheets[sheetName];
         const jsonData = XLSX.utils.sheet_to_json(sheet);
 
-        // Map images to imported assets
+        // Map images to public folder path
         const processedData = jsonData.map(item => ({
           ...item,
-          image: IMAGE_MAP[item.image] || ""
+          // Use public folder path. Ensure item.image is just the filename.
+          image: item.image ? `/product-images/${item.image}` : ""
         }));
 
         setProducts(processedData);
