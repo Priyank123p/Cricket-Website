@@ -8,22 +8,21 @@ import brandingImg from '../Img/Branding-IMG/Branding-IMG2.jpeg';
 import productBanner from '../Img/product-banner.png';
 import './Product.css';
 
+import proPlayersImg from '../Img/Product-IMG/New Pro Players Edition-IMG.png';
+import premiumPlayersImg from '../Img/Product-IMG/New Premium Players-IMG.png';
+import cbsEditionImg from '../Img/Product-IMG/77 CBS Edition 7 Star-IMG.png';
+import cielFighterImg from '../Img/Product-IMG/Ciel Fighter AK 47 hard tennis cricket bat-IMG.jpeg';
+
 const PRODUCTS_DATA = [
-  { id: 1, name: "MRF Genius Grand Edition", price: "₹24,999", oldPrice: "₹30,000", image: "https://www.mrfsports.com/sites/default/files/styles/homepage_bat_listing/public/5.%20GENIUS%20GRAND.png?itok=nShyNO-Z", brand: "MRF", category: "English Willow", weight: "1180g", rating: 4.8, badge: "New" },
+  { id: 1, name: "New Pro Players Edition", price: "₹2,000", oldPrice: "₹2,200", image: proPlayersImg, brand: "77", category: "", weight: "1180g", rating: 4.8, badge: "New" },
 
-  { id: 2, name: "SG Player's Edition", price: "₹18,499", oldPrice: "₹22,000", image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQi147E0VkdWeVm80aGj2cBmgXxGkfXpEhuXMWq4mZrW61VVK9tOpPPuYJjt4K9jVFumXbxdgLTyID3mj3hZTylqopDgmMMvUM_dLt_xWU9aE_S0sa1KDavLQu_", brand: "SG", category: "English Willow", weight: "1190g", rating: 4.7, badge: "New" },
+  { id: 2, name: "New Premium Players", price: "₹1,899", oldPrice: "₹2,100", image: premiumPlayersImg, brand: "77", category: "", weight: "1190g", rating: 4.7, badge: "New" },
 
-  { id: 3, name: "Kookaburra Aura Pro", price: "₹21,999", oldPrice: "₹25,000", image: "https://crickstore.com/cdn/shop/files/2B13411-AuraPro8.0CricketBat-2_ff7ab2c5-dda6-4de3-b7c0-8f194636deb6.jpg?v=1761809367&width=480", brand: "Kookaburra", category: "Kashmir Willow", weight: "1170g", rating: 4.9, badge: "Hot" },
+  { id: 3, name: "77 CBS Edition 7 Star", price: "₹1,500", oldPrice: "₹1,700", image: cbsEditionImg, brand: "77", category: "", weight: "1170g", rating: 4.9, badge: "" },
 
-  { id: 4, name: "SS Ton Reserve", price: "₹15,999", oldPrice: "₹19,500", image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS7unjcWLaN7yL2kXrN1mSOmHRNI-zaB5VXpCroG_Dxm7M2k4K4baU4Ysq7mIgM6mwFbjzuHFH5hUhezbj9gPgkWaenp0WX-6J7CvIyqeAsHjzl9P5a1p-HGQ", brand: "SS", category: "English Willow", weight: "1200g", rating: 4.6, badge: "Sale" },
+  { id: 4, name: "Ciel Fighter AK 47 hard tennis cricket bat", price: "₹2,100", oldPrice: "₹2,500", image: cielFighterImg, brand: "77", category: "", weight: "1200g", rating: 4.6, badge: "Sale" },
 
-  { id: 5, name: "GM Diamond DXM", price: "₹28,999", oldPrice: "₹34,000", image: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/8/6/86d11e2GM-DIAMONDEXCALIBUR-EW-BAT-S5_1.jpg", brand: "GM", category: "English Willow", weight: "1160g", rating: 5.0, badge: "" },
-
-  { id: 6, name: "DSC Blak 44", price: "₹9,999", oldPrice: "₹12,000", image: "https://cdnmedia.dsc-cricket.com/media/catalog/product/cache/42540e3df8c40aae349dc161e4942d7b/d/s/dsc-blak-44-india-range-kashmir-willow-cricket-bat-2.webp", brand: "DSC", category: "Kashmir Willow", weight: "1180g", rating: 4.3, badge: "" },
-
-  { id: 7, name: "New Balance DC 1080", price: "₹3,499", oldPrice: "₹3,699", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKtPrJlvb0NRzZgX4bMmOkzFsil-iISCKaYg&s", brand: "NEW BALANCE", category: "English Willow", weight: "1090g", rating: 4.7, badge: "New" },
-
-  { id: 8, name: "Hard Tennis Scoop Bat (Double Blade)- Burnt", price: "₹2,599", oldPrice: "₹2,999", image: "https://tramboosports.com/cdn/shop/files/bat_1_a6_1060x.jpg?v=1744983988", brand: "TRAMBOO", category: "Kashmir Willow", weight: "1210g", rating: 4.5, badge: "Sale" },
+  { id: 5, name: "Ciel Gold edition hard tennis cricket bat ", price: "₹2,899", oldPrice: "₹3,399", image: "", brand: "77", category: "", weight: "1160g", rating: 5.0, badge: "New" },
 
 ];
 
@@ -37,9 +36,9 @@ const Product = () => {
   const filteredProducts = PRODUCTS_DATA.filter(product => {
     if (filters.brand !== 'All' && product.brand !== filters.brand) return false;
     const price = parseInt(product.price.replace(/[^0-9]/g, ''));
-    if (filters.priceRange === 'Under 10k' && price > 10000) return false;
-    if (filters.priceRange === '10k - 20k' && (price < 10000 || price > 20000)) return false;
-    if (filters.priceRange === 'Above 20k' && price < 20000) return false;
+    if (filters.priceRange === 'Under 1k' && price > 1000) return false;
+    if (filters.priceRange === '1k - 2k' && (price < 1000 || price > 2000)) return false;
+    if (filters.priceRange === 'Above 2k' && price < 2000) return false;
     return true;
   });
 
@@ -80,21 +79,12 @@ const Product = () => {
           <div className="d-flex gap-3 flex-wrap">
             <select className="filter-select" style={{ width: '150px' }} onChange={(e) => handleFilterChange('brand', e.target.value)}>
               <option value="All">All Brands</option>
-              <option value="MRF">MRF</option>
-              <option value="SG">SG</option>
-              <option value="SS">SS</option>
-              <option value="DSC">DSC</option>
-              <option value="NEW BALANCE">NEW BALANCE</option>
-              <option value="TRAMBOO">TRAMBOO</option>
-              <option value="GM">GM</option>
-              <option value="RK">RK Edition</option>
-              <option value="Kookaburra">Kookaburra</option>
             </select>
             <select className="filter-select" style={{ width: '150px' }} onChange={(e) => handleFilterChange('priceRange', e.target.value)}>
               <option value="All">Price Range</option>
-              <option value="Under 10k">Under ₹10,000</option>
-              <option value="10k - 20k">₹10,000 - ₹20,000</option>
-              <option value="Above 20k">Above ₹20,000</option>
+              <option value="Under 1k">Under ₹1,000</option>
+              <option value="1k - 2k">₹1,000 - ₹2,000</option>
+              <option value="Above 2k">Above ₹2,000</option>
             </select>
           </div>
 
