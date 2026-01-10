@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Star, Check, Filter, ArrowRight, ShieldCheck, Truck, RefreshCw, CreditCard } from 'lucide-react';
 import { useCart } from './Context/CartContext';
 import brandingImg from '../Img/Branding-IMG/Branding-IMG2.jpeg';
-import productBanner from '../Img/product-banner.png';
+import productBanner from '../Img/product-banner.jpg';
 import './Product.css';
 
 import proPlayersImg from '../Img/Product-IMG/New Pro Players Edition-IMG.png';
@@ -65,7 +65,11 @@ const Product = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <img src={productBanner} alt="Master the Game, Dominate the Field" className="img-fluid w-100" />
+        <img src={productBanner} alt="Master the Game, Dominate the Field" className="img-fluid w-100 banner-img" />
+        <div className="mobile-banner-text">
+          <h1>Products</h1>
+          <p>Premium Cricket Gear for Champions</p>
+        </div>
       </motion.div>
       <Container>
 
