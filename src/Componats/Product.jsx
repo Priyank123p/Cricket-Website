@@ -7,6 +7,8 @@ import { useCart } from './Context/CartContext';
 import brandingImg from '../Img/Branding-IMG/Branding-IMG2.jpeg';
 import productBanner from '../Img/product-banner.jpg';
 import './Product.css';
+import * as XLSX from 'xlsx';
+import productDataFile from '../products.xlsx';
 
 import proPlayersImg from '../Img/Product-IMG/New Pro Players Edition-IMG.png';
 import premiumPlayersImg from '../Img/Product-IMG/New Premium Players-IMG.png';
@@ -14,28 +16,49 @@ import cbsEditionImg from '../Img/Product-IMG/77 CBS Edition 7 Star-IMG.png';
 import cielFighterImg from '../Img/Product-IMG/Ciel Fighter AK 47 hard tennis cricket bat-IMG.jpeg';
 import goldEditionImg from '../Img/Product-IMG/Ciel Gold edition hard tennis cricket bat-IMG.jpeg';
 
-const PRODUCTS_DATA = [
-  { id: 1, name: "New Pro Players Edition", price: "₹2,000", oldPrice: "₹2,200", image: proPlayersImg, brand: "77", category: "", weight: "1180g", rating: 4.8, badge: "New" },
-
-  { id: 2, name: "New Premium Players", price: "₹1,899", oldPrice: "₹2,100", image: premiumPlayersImg, brand: "77", category: "", weight: "1190g", rating: 4.7, badge: "New" },
-
-  { id: 3, name: "77 CBS Edition 7 Star", price: "₹1,500", oldPrice: "₹1,700", image: cbsEditionImg, brand: "77", category: "", weight: "1170g", rating: 4.9, badge: "" },
-
-  { id: 4, name: "Ciel Fighter AK 47 hard tennis cricket bat", price: "₹2,100", oldPrice: "₹3,000", image: cielFighterImg, brand: "77", category: "", weight: "1200g", rating: 4.6, badge: "Sale" },
-
-  { id: 5, name: "Ciel Gold edition hard tennis cricket bat", price: "₹2,899", oldPrice: "₹3,500", image: goldEditionImg, brand: "77", category: "", weight: "1160g", rating: 5.0, badge: "New" },
-];
+const IMAGE_MAP = {
+  "New Pro Players Edition-IMG.png": proPlayersImg,
+  "New Premium Players-IMG.png": premiumPlayersImg,
+  "77 CBS Edition 7 Star-IMG.png": cbsEditionImg,
+  "Ciel Fighter AK 47 hard tennis cricket bat-IMG.jpeg": cielFighterImg,
+  "Ciel Gold edition hard tennis cricket bat-IMG.jpeg": goldEditionImg
+};
 
 const Product = () => {
-  const [products, setProducts] = useState(PRODUCTS_DATA);
+  const [products, setProducts] = useState([]);
   const [filters, setFilters] = useState({ brand: 'All', priceRange: 'All' });
   const [sortBy, setSortBy] = useState('newest');
   const { addToCart } = useCart();
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(productDataFile);
+        const arrayBuffer = await response.arrayBuffer();
+        const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const jsonData = XLSX.utils.sheet_to_json(sheet);
+
+        // Map images to imported assets
+        const processedData = jsonData.map(item => ({
+          ...item,
+          image: IMAGE_MAP[item.image] || ""
+        }));
+
+        setProducts(processedData);
+      } catch (error) {
+        console.error("Error reading Excel file:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   // Filter Logic
-  const filteredProducts = PRODUCTS_DATA.filter(product => {
+  const filteredProducts = products.filter(product => {
     if (filters.brand !== 'All' && product.brand !== filters.brand) return false;
-    const price = parseInt(product.price.replace(/[^0-9]/g, ''));
+    const price = parseInt(String(product.price).replace(/[^0-9]/g, ''));
     if (filters.priceRange === 'Under 1k' && price > 1000) return false;
     if (filters.priceRange === '1k - 2k' && (price < 1000 || price > 2000)) return false;
     if (filters.priceRange === 'Above 2k' && price < 2000) return false;
@@ -44,13 +67,13 @@ const Product = () => {
 
   // Sort Logic
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    const priceA = parseInt(a.price.replace(/[^0-9]/g, ''));
-    const priceB = parseInt(b.price.replace(/[^0-9]/g, ''));
+    const priceA = parseInt(String(a.price).replace(/[^0-9]/g, ''));
+    const priceB = parseInt(String(b.price).replace(/[^0-9]/g, ''));
 
     if (sortBy === 'price-low-high') return priceA - priceB;
     if (sortBy === 'price-high-low') return priceB - priceA;
-    if (sortBy === 'best-selling') return b.rating - a.rating; // Mock usage of rating for best selling
-    return 0; // Default (newest - assuming original order is relatively new)
+    if (sortBy === 'best-selling') return b.rating - a.rating;
+    return 0; // Default
   });
 
   const handleFilterChange = (key, value) => {
