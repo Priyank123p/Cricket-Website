@@ -8,7 +8,6 @@ import brandingImg from '../Img/Branding-IMG/Branding-IMG2.jpeg';
 import productBanner from '../Img/product-banner.png';
 import './Product.css';
 
-// Mock Data
 const PRODUCTS_DATA = [
   { id: 1, name: "MRF Genius Grand Edition", price: "₹24,999", oldPrice: "₹30,000", image: "https://www.mrfsports.com/sites/default/files/styles/homepage_bat_listing/public/5.%20GENIUS%20GRAND.png?itok=nShyNO-Z", brand: "MRF", category: "English Willow", weight: "1180g", rating: 4.8, badge: "New" },
 

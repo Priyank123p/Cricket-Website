@@ -1,8 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ContactUs.css';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
+import { useNavigate } from 'react-router-dom';
+import { useCart } from './Context/CartContext';
+
 const ContactUs = () => {
+  const { cartItems, clearCart } = useCart();
+  const navigate = useNavigate();
+  const [productName, setProductName] = useState('');
+
+  useEffect(() => {
+    if (cartItems.length > 0) {
+      const itemsList = cartItems.map(item => `• ${item.name} (Qty: ${item.quantity || 1})`).join('\n');
+      setProductName(itemsList);
+    }
+  }, [cartItems]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (cartItems.length > 0) {
+      alert("Order Confirmed Successfully! Thank you for your purchase.");
+      clearCart();
+      navigate('/');
+    } else {
+      alert("Message Sent! We will get back to you shortly.");
+      navigate('/');
+    }
+  };
+
   return (
     <div className="contact-container">
       <div className="contact-header">
@@ -52,10 +79,15 @@ const ContactUs = () => {
             <p>Have a question about our products or need help choosing the right cricket bat?
               Fill out the form and our team will get back to you shortly.</p>
           </div>
-          <form className="contact-form">
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="fullname">Full Name</label>
               <input type="text" id="fullname" placeholder="Enter your full name" />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="address">Address</label>
+              <input type="text" id="address" placeholder="Enter your full address" />
             </div>
 
             <div className="form-group">
@@ -69,11 +101,22 @@ const ContactUs = () => {
             </div>
 
             <div className="form-group">
+              <label htmlFor="productName">Product Details</label>
+              <textarea
+                id="productName"
+                placeholder="Product details will appear here..."
+                value={productName}
+                onChange={(e) => setProductName(e.target.value)}
+                rows="4"
+              ></textarea>
+            </div>
+
+            <div className="form-group">
               <label htmlFor="message">Message</label>
               <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
             </div>
 
-            <button type="submit" className="submit-btn">Send Message</button>
+            <button type="submit" className="submit-btn">Submit</button>
           </form>
         </div>
       </div>

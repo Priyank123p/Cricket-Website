@@ -3,9 +3,13 @@ import { NavLink } from 'react-router-dom';
 import { Search, ShoppingCart, Menu, X, Phone, Mail } from 'lucide-react';
 import './Header.css';
 import logo from '../Img/Logo/Main-Logo.png';
+import { useCart } from '../Componats/Context/CartContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { cartItems } = useCart();
+
+  const totalItems = cartItems.length;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -53,6 +57,7 @@ const Header = () => {
 
           <NavLink to="/cart" className="cart-icon-container">
             <ShoppingCart size={24} />
+            {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
           </NavLink>
 
           {/* Mobile Menu Toggle */}

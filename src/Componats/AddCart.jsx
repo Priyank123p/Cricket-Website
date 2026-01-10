@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from './Context/CartContext';
 import './AddCart.css';
 import { Trash2, Plus, Minus } from 'lucide-react';
 
 const AddCart = () => {
   const { cartItems, removeFromCart, getCartTotal, increaseQuantity, decreaseQuantity } = useCart();
+  const navigate = useNavigate();
 
   return (
     <div className="cart-page">
@@ -72,7 +74,7 @@ const AddCart = () => {
                 <span>Total</span>
                 <span>₹{getCartTotal().toLocaleString()}</span>
               </div>
-              <button className="checkout-btn">Proceed to Checkout</button>
+              <button className="checkout-btn" onClick={() => navigate('/contact')}>Proceed to Checkout</button>
             </div>
           )}
         </div>
