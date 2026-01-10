@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ContactUs.css';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import OrderSuccess from './OrderSuccess';
 
 import { useNavigate } from 'react-router-dom';
 import { useCart } from './Context/CartContext';
@@ -9,6 +10,7 @@ const ContactUs = () => {
   const { cartItems, clearCart } = useCart();
   const navigate = useNavigate();
   const [productName, setProductName] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
     if (cartItems.length > 0) {
@@ -17,13 +19,18 @@ const ContactUs = () => {
     }
   }, [cartItems]);
 
+  const handleSuccessClose = () => {
+    setShowSuccess(false);
+    clearCart();
+    navigate('/');
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (cartItems.length > 0) {
-      alert("Order Confirmed Successfully! Thank you for your purchase.");
-      clearCart();
-      navigate('/');
+      setShowSuccess(true);
+      // Alert removed, modal handles it
     } else {
       alert("Message Sent! We will get back to you shortly.");
       navigate('/');
@@ -133,6 +140,11 @@ const ContactUs = () => {
           loading="lazy"
         ></iframe>
       </div>
+
+      <OrderSuccess
+        isOpen={showSuccess}
+        onClose={handleSuccessClose}
+      />
     </div>
   );
 };
