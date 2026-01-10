@@ -75,6 +75,7 @@
 .footer-brand h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: linear-gradient(to right, #ff3a30, #ff9409);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2rem;
@@ -167,7 +168,7 @@
     transition: all 0.3s ease;
 }
 
-.adress-icon-wrapper {
+.address-icon-wrapper {
     width: 80px;
     height: 40px;
     border-radius: 50%;
@@ -313,9 +314,8 @@
     }
 
     .contact-icon-wrapper,
-    .adress-icon-wrapper {
+    .address-icon-wrapper {
         margin-top: 2px;
-        /* Slight alignment fix for icons with multiline text */
     }
 
     .newsletter-form {

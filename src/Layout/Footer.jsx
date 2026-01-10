@@ -63,7 +63,7 @@ const Footer = () => {
         >
           <h3 className="footer-heading">Get in Touch</h3>
           <div className="contact-item">
-            <div className="adress-icon-wrapper">
+            <div className="address-icon-wrapper">
               <MapPin size={20} />
             </div>
             <span>318 Shivalik Satymev,Ambli-Bopal Rd,Crossroad,Bopal,Ahmedabad,Gujarat 380058</span>
