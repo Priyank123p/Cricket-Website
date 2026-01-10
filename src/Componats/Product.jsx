@@ -20,10 +20,9 @@ const PRODUCTS_DATA = [
 
   { id: 3, name: "77 CBS Edition 7 Star", price: "₹1,500", oldPrice: "₹1,700", image: cbsEditionImg, brand: "77", category: "", weight: "1170g", rating: 4.9, badge: "" },
 
-  { id: 4, name: "Ciel Fighter AK 47 hard tennis cricket bat", price: "₹2,100", oldPrice: "₹2,500", image: cielFighterImg, brand: "77", category: "", weight: "1200g", rating: 4.6, badge: "Sale" },
+  { id: 4, name: "Ciel Fighter AK 47 hard tennis cricket bat", price: "₹2,100", oldPrice: "₹3,000", image: cielFighterImg, brand: "77", category: "", weight: "1200g", rating: 4.6, badge: "Sale" },
 
-  { id: 5, name: "Ciel Gold edition hard tennis cricket bat ", price: "₹2,899", oldPrice: "₹3,399", image: "", brand: "77", category: "", weight: "1160g", rating: 5.0, badge: "New" },
-
+  { id: 5, name: "Ciel Gold edition hard tennis cricket bat ", price: "₹2,899", oldPrice: "₹3,500", image: "", brand: "77", category: "", weight: "1160g", rating: 5.0, badge: "New" },
 ];
 
 const Product = () => {

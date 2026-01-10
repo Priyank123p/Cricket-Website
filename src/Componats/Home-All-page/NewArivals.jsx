@@ -35,7 +35,7 @@ const products = [
     id: 4,
     name: "Ciel Fighter AK 47 hard tennis cricket bat",
     category: "",
-    price: "₹3,499",
+    price: "₹3,000",
     image: Img4,
   },
 ];
