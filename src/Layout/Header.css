@@ -108,6 +108,30 @@
 
 
 
+/* Contact Info (Desktop Only) */
+.contact-info-desktop {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 1.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.contact-item svg {
+    color: #ff5825;
+}
+
 /* Cart Icon */
 .cart-icon-container {
     color: #cfcfcf;
@@ -130,6 +154,10 @@
 
 /* --- Responsive Design --- */
 @media (max-width: 1024px) {
+    .contact-info-desktop {
+        display: none;
+    }
+
     .nav-list {
         gap: 2rem;
     }

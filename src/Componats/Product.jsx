@@ -231,8 +231,12 @@ const BrandingSection = () => {
     >
       <Row className="align-items-center">
         <Col md={7} className="branding-content">
-          <h2 className="branding-title">Power Your Game</h2>
-          <p className="branding-text">Premium English Willow Bats used by international professionals. Experience specific engineering designed for maximum boundaries.</p>
+          <h2 className="branding-title">Master Class Engineering</h2>
+          <p className="branding-text">
+            Hand-crafted from the top 1% of Grade A English Willow, our bats are the pinnacle of cricketing excellence.
+            Validated by international pros, they offer a sublime ping and an extended sweet spot.
+            Engineered for those who refuse to compromise on performance.
+          </p>
 
         </Col>
         <Col md={5}>

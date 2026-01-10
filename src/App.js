@@ -7,7 +7,7 @@ import Product from './Componats/Product';
 import AboutUs from './Componats/AboutUs';
 import CotactUs from './Componats/CotactUs';
 import AddCart from './Componats/AddCart';
-import CustomCursor from './Componats/CustomCursor';
+
 import Loader from './Componats/Loader';
 import { CartProvider } from './Componats/Context/CartContext';
 import Footer from './Layout/Footer';
@@ -29,7 +29,7 @@ function App() {
         <Loader />
       ) : (
         <CartProvider>
-          <CustomCursor />
+
           <BrowserRouter>
             <Header />
             <Routes>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Search, ShoppingCart, Menu, X } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, Phone, Mail } from 'lucide-react';
 import './Header.css';
 import logo from '../Img/Logo/Main-Logo.png';
 
@@ -39,6 +39,16 @@ const Header = () => {
 
         {/* Right: Search & Cart */}
         <div className="header-right">
+          <div className="contact-info-desktop">
+            <div className="contact-item">
+              <Phone size={16} />
+              <span>+91 98765 43210</span>
+            </div>
+            <div className="contact-item">
+              <Mail size={16} />
+              <span>info@rksports.com</span>
+            </div>
+          </div>
 
 
           <NavLink to="/cart" className="cart-icon-container">
