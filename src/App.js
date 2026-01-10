@@ -10,6 +10,7 @@ import AddCart from './Componats/AddCart';
 
 import Loader from './Componats/Loader';
 import { CartProvider } from './Componats/Context/CartContext';
+import ScrollToTop from './Componats/ScrollToTop';
 import Footer from './Layout/Footer';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <CartProvider>
 
           <BrowserRouter>
+            <ScrollToTop />
             <Header />
             <Routes>
               <Route path="/" element={<Home />} />
