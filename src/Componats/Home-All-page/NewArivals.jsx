@@ -4,37 +4,37 @@ import { Heart, ShoppingCart } from 'lucide-react';
 import './NewArivals.css';
 import { useCart } from '../Context/CartContext'; // Import useCart
 
-import Img1 from '../../Img/NewArivals-IMG/black_bat_all_sides_636x.webp';
-import Img2 from '../../Img/NewArivals-IMG/Grade4-English-Willow-Astral.webp';
-import Img3 from '../../Img/NewArivals-IMG/Grade-3-Willow.webp';
-import Img4 from '../../Img/NewArivals-IMG/Kashmir-Willow.webp';
+import Img1 from '../../Img/Product-IMG/New Pro Players Edition-IMG.png';
+import Img2 from '../../Img/Product-IMG/New Premium Players-IMG.png';
+import Img3 from '../../Img/Product-IMG/77 CBS Edition 7 Star-IMG.png';
+import Img4 from '../../Img/Product-IMG/Ciel Fighter AK 47 hard tennis cricket bat-IMG.jpeg';
 
 const products = [
   {
     id: 1,
-    name: "Hard Tennis Scoop Bat - Black Knight (WATERPROOF)",
-    category: "English Willow",
+    name: "New Pro Players Edition",
+    category: "",
     price: "₹2,799",
     image: Img1,
   },
   {
     id: 2,
-    name: "Astral Grade 4 English Willow",
-    category: "English Willow",
+    name: "New Premium Players",
+    category: "",
     price: "₹8,499",
     image: Img2,
   },
   {
     id: 3,
-    name: "Grade 3 Willow Premium",
-    category: "Willow Bat",
+    name: "77 CBS Edition 7 Star",
+    category: "",
     price: "₹5,299",
     image: Img3,
   },
   {
     id: 4,
-    name: "Kashmir Willow Beast",
-    category: "Kashmir Willow",
+    name: "Ciel Fighter AK 47 hard tennis cricket bat",
+    category: "",
     price: "₹3,499",
     image: Img4,
   },
