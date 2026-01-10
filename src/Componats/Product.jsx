@@ -12,6 +12,7 @@ import proPlayersImg from '../Img/Product-IMG/New Pro Players Edition-IMG.png';
 import premiumPlayersImg from '../Img/Product-IMG/New Premium Players-IMG.png';
 import cbsEditionImg from '../Img/Product-IMG/77 CBS Edition 7 Star-IMG.png';
 import cielFighterImg from '../Img/Product-IMG/Ciel Fighter AK 47 hard tennis cricket bat-IMG.jpeg';
+import goldEditionImg from '../Img/Product-IMG/Ciel Gold edition hard tennis cricket bat-IMG.jpeg';
 
 const PRODUCTS_DATA = [
   { id: 1, name: "New Pro Players Edition", price: "₹2,000", oldPrice: "₹2,200", image: proPlayersImg, brand: "77", category: "", weight: "1180g", rating: 4.8, badge: "New" },
@@ -22,7 +23,7 @@ const PRODUCTS_DATA = [
 
   { id: 4, name: "Ciel Fighter AK 47 hard tennis cricket bat", price: "₹2,100", oldPrice: "₹3,000", image: cielFighterImg, brand: "77", category: "", weight: "1200g", rating: 4.6, badge: "Sale" },
 
-  { id: 5, name: "Ciel Gold edition hard tennis cricket bat ", price: "₹2,899", oldPrice: "₹3,500", image: "", brand: "77", category: "", weight: "1160g", rating: 5.0, badge: "New" },
+  { id: 5, name: "Ciel Gold edition hard tennis cricket bat", price: "₹2,899", oldPrice: "₹3,500", image: goldEditionImg, brand: "77", category: "", weight: "1160g", rating: 5.0, badge: "New" },
 ];
 
 const Product = () => {
