@@ -173,7 +173,19 @@ const ProductCard = ({ product, addToCart, index }) => {
         )}
 
         <div className="product-img-wrapper">
-          <img src={product.image} alt={product.name} className="product-img" />
+          {product.image && product.image.toLowerCase().endsWith('.mp4') ? (
+            <video
+              src={product.image}
+              className="product-img"
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{ objectFit: 'cover' }}
+            />
+          ) : (
+            <img src={product.image} alt={product.name} className="product-img" />
+          )}
         </div>
 
         <div className="product-info mt-2">
