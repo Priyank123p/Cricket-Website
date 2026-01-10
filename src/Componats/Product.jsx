@@ -25,13 +25,6 @@ const PRODUCTS_DATA = [
 
   { id: 8, name: "Hard Tennis Scoop Bat (Double Blade)- Burnt", price: "₹2,599", oldPrice: "₹2,999", image: "https://tramboosports.com/cdn/shop/files/bat_1_a6_1060x.jpg?v=1744983988", brand: "TRAMBOO", category: "Kashmir Willow", weight: "1210g", rating: 4.5, badge: "Sale" },
 
-  { id: 9, name: "SG Kashmir Willow Cricket Bat (Tennis ball) T-1000", price: "₹1,772", oldPrice: "₹1,969", image: "https://shop.teamsg.in/cdn/shop/files/Untitled_design_67.png?v=1745395745&width=990", brand: "SG", category: " Kashmir Willow", weight: "1175g", rating: 4.6, badge: "New" },
-
-  { id: 10, name: "DSC Pentazone Kashmir Willow Tennis Cricket Bat", price: "₹3,297", oldPrice: "₹3,599", image: "https://m.media-amazon.com/images/I/51dygohcgAL._SX679_.jpg", brand: "DSC", category: "Kashmir Willow", weight: "1000g", rating: 4.9, badge: "Premium" },
-
-  { id: 11, name: "DSC Wood County Super Cricket Bat", price: "₹2,105 ", oldPrice: "₹2,799", image: "https://m.media-amazon.com/images/I/51F7AP24GlL._SX679_.jpg", brand: "DSC", category: "Kashmir Willow", weight: "1185g", rating: 4.2, badge: "" },
-
-  { id: 12, name: "Ultralite Gully Tennis Bat", price: "₹2,799", oldPrice: "₹2,999", image: "https://tramboosports.com/cdn/shop/files/blue_bat_all_sides_1060x.jpg?v=1750093707", brand: "TRAMBOO", category: "Kashmir Willow", weight: "1200g", rating: 4.4, badge: "Sale" },
 ];
 
 const Product = () => {
@@ -121,12 +114,7 @@ const Product = () => {
           <AnimatePresence>
             {sortedProducts.map((product, index) => (
               <React.Fragment key={product.id}>
-                {/* Insert Branding Section after 8th item (index 7) */}
-                {index === 8 && (
-                  <Col xs={12} className="p-0">
-                    <BrandingSection />
-                  </Col>
-                )}
+
 
                 <Col xs={12} md={6} lg={4} xl={3}>
                   <ProductCard product={product} addToCart={addToCart} index={index} />
@@ -135,6 +123,10 @@ const Product = () => {
             ))}
           </AnimatePresence>
         </Row>
+
+        <div className="mb-5">
+          <BrandingSection />
+        </div>
 
         {/* Trust Section */}
         <TrustSection />
