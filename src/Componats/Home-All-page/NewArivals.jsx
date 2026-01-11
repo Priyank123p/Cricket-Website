@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, ShoppingCart } from 'lucide-react';
 import './NewArivals.css';
-import { useCart } from '../Context/CartContext'; // Import useCart
+import { useCart } from '../Context/CartContext';
 
 import Img1 from '../../Img/Product-IMG/New Pro Players Edition-IMG.png';
 import Img2 from '../../Img/Product-IMG/New Premium Players-IMG.png';
@@ -14,21 +14,21 @@ const products = [
     id: 1,
     name: "New Pro Players Edition",
     category: "",
-    price: "₹2,799",
+    price: "₹2,000",
     image: Img1,
   },
   {
     id: 2,
     name: "New Premium Players",
     category: "",
-    price: "₹8,499",
+    price: "₹1,899",
     image: Img2,
   },
   {
     id: 3,
     name: "77 CBS Edition 7 Star",
     category: "",
-    price: "₹5,299",
+    price: "₹1,500",
     image: Img3,
   },
   {
@@ -88,7 +88,7 @@ const NewArivals = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title">New Arrivals</h2>
+            <h2 className="section-title">Most Selling Product</h2>
             <p className="section-subtitle">SHOP ALL SPORTS ITEM AT RK SPORTS</p>
           </motion.div>
         </div>
@@ -109,8 +109,6 @@ const NewArivals = () => {
               whileHover={{ scale: 1.02 }} // Subtle scale up on hover
             >
               <div className="image-wrapper">
-                <span className="badge-new">New</span>
-
                 <img src={product.image} alt={product.name} className="product-image" />
 
                 <div className="add-to-cart-overlay">

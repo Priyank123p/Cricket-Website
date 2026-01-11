@@ -30,7 +30,6 @@ function App() {
         <Loader />
       ) : (
         <CartProvider>
-
           <BrowserRouter>
             <ScrollToTop />
             <Header />

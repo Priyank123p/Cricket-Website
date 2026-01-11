@@ -119,24 +119,6 @@
     transform: scale(1.1);
 }
 
-/* Badges & Actions */
-.badge-new {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background-color: #ff3e6c;
-    color: white;
-    padding: 5px 12px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    border-radius: 20px;
-    z-index: 10;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-
-
 /* Add to Cart Overlay */
 .add-to-cart-overlay {
     position: absolute;
