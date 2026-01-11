@@ -89,7 +89,7 @@ const NewArivals = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="section-title">Most Selling Product</h2>
-            <p className="section-subtitle">SHOP ALL SPORTS ITEM AT RK SPORTS</p>
+            <p className="section-subtitle">SHOP PREMIUM CRICKET BATS AT RK SPORTS</p>
           </motion.div>
         </div>
 
