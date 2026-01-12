@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Star, Check, Filter, ArrowRight, ShieldCheck, Truck, RefreshCw, CreditCard } from 'lucide-react';
 import { useCart } from './Context/CartContext';
 import brandingImg from '../Img/Branding-IMG/Branding-IMG2.jpeg';
-import productBanner from '../Img/product-banner.jpg';
+import productBanner from '../Img/AboutUs-IMG/Top-Banar-IMG-2.png';
 import './Product.css';
 import * as XLSX from 'xlsx';
 import productDataFile from '../products.xlsx';
@@ -76,6 +76,7 @@ const Product = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <img src={productBanner} alt="Master the Game, Dominate the Field" className="img-fluid w-100 banner-img" />
+        <div className="hero-overlay"></div>
         <div className="mobile-banner-text">
           <h1>Products</h1>
           <p>Premium Cricket Gear for Champions</p>

@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Hammer, Star, ShieldCheck, Zap } from 'lucide-react';
 import aboutImage from '../Img/Branding-IMG/Branding-IMG2.jpeg';
 
-import topBannerImage from '../Img/AboutUs-IMG/Top-Banar-IMG.avif';
+import topBannerImage from '../Img/AboutUs-IMG/Top-Banar-IMG.png';
 
 const AboutUs = () => {
   const { scrollY } = useScroll();
@@ -25,31 +25,38 @@ const AboutUs = () => {
           <div className="hero-overlay"></div>
         </motion.div>
 
-        <div className="hero-content text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            About
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            The Perfect Balance of Power & Precision
-          </motion.p>
-          <motion.button
-            className="hero-btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/product')}
-          >
-            Explore Collection
-            <div className="shine"></div>
-          </motion.button>
+        <div className="container h-100">
+          <div className="row h-100 align-items-center">
+            <div className="col-lg-6 col-md-8">
+              <div className="hero-content text-start">
+                <motion.h1
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                  About
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                >
+                  The Perfect Balance of Power & Precision
+                </motion.p>
+                <motion.button
+                  className="hero-btn"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => navigate('/product')}
+                >
+                  Explore Collection
+                  <div className="shine"></div>
+                </motion.button>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
 
       {/* 2. Who We Are Section */}
