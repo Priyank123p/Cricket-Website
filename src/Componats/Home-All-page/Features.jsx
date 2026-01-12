@@ -14,12 +14,12 @@ const Features = () => {
         {
             icon: <BadgeCheck size={40} />,
             title: "BRANDED QUALITY",
-            description: "MJ Sports deals with only best quality products."
+            description: "JM Sports deals with only best quality products."
         },
         {
             icon: <RefreshCcw size={40} />,
             title: "EXCHANGE",
-            description: "Products can be exchanged hassle free as per MJ Sports exchange policy."
+            description: "Products can be exchanged hassle free as per JM Sports exchange policy."
         },
         {
             icon: <Headset size={40} />,

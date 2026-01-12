@@ -46,11 +46,11 @@ const Header = () => {
           <div className="contact-info-desktop">
             <div className="contact-item">
               <Phone size={16} />
-              <span>+91 98765 43210</span>
+              <span>+91 97141 00109</span>
             </div>
             <div className="contact-item">
               <Mail size={16} />
-              <span>info@mjsports.com</span>
+              <span>jmsports196@gmail.com</span>
             </div>
           </div>
 

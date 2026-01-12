@@ -59,7 +59,7 @@ const ContactUs = () => {
               <Phone size={24} />
             </div>
             <h3>Phone</h3>
-            <p>+91 81404 00109</p>
+            <p>+91 97141 00109</p>
           </div>
 
           <div className="info-card">
@@ -67,7 +67,7 @@ const ContactUs = () => {
               <Mail size={24} />
             </div>
             <h3>Email</h3>
-            <p>support@mjsports.com</p>
+            <p>jmsports196@gmail.com</p>
           </div>
 
           <div className="info-card">
