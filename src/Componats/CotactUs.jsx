@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ContactUs.css';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import OrderSuccess from './OrderSuccess';
+import InquirySuccess from './InquirySuccess';
 import ReCAPTCHA from "react-google-recaptcha";
 
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +13,7 @@ const ContactUs = () => {
   const navigate = useNavigate();
   const [productName, setProductName] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showInquirySuccess, setShowInquirySuccess] = useState(false);
   const [captchaValue, setCaptchaValue] = useState(null);
 
   useEffect(() => {
@@ -24,6 +26,11 @@ const ContactUs = () => {
   const handleSuccessClose = () => {
     setShowSuccess(false);
     clearCart();
+    navigate('/');
+  };
+
+  const handleInquiryClose = () => {
+    setShowInquirySuccess(false);
     navigate('/');
   };
 
@@ -42,10 +49,8 @@ const ContactUs = () => {
 
     if (cartItems.length > 0) {
       setShowSuccess(true);
-      // Alert removed, modal handles it
     } else {
-      alert("Message Sent! We will get back to you shortly.");
-      navigate('/');
+      setShowInquirySuccess(true);
     }
   };
 
@@ -163,6 +168,11 @@ const ContactUs = () => {
       <OrderSuccess
         isOpen={showSuccess}
         onClose={handleSuccessClose}
+      />
+
+      <InquirySuccess
+        isOpen={showInquirySuccess}
+        onClose={handleInquiryClose}
       />
     </div>
   );
