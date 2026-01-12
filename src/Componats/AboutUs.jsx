@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Hammer, Star, ShieldCheck, Zap } from 'lucide-react';
 import aboutImage from '../Img/Branding-IMG/Branding-IMG2.jpeg';
 
-import topBannerImage from '../Img/AboutUs-IMG/Top-Banar-IMG.png';
+import topBannerImage from '../Img/AboutUs-IMG/Top-Banar-IMG-2.png';
 
 const AboutUs = () => {
   const { scrollY } = useScroll();

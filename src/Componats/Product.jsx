@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Star, Check, Filter, ArrowRight, ShieldCheck, Truck, RefreshCw, CreditCard } from 'lucide-react';
 import { useCart } from './Context/CartContext';
 import brandingImg from '../Img/Branding-IMG/Branding-IMG2.jpeg';
-import productBanner from '../Img/AboutUs-IMG/Top-Banar-IMG-2.png';
+import productBanner from '../Img/AboutUs-IMG/Top-Banar-IMG.png';
 import './Product.css';
 import * as XLSX from 'xlsx';
 import productDataFile from '../products.xlsx';
