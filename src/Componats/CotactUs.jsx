@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ContactUs.css';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import OrderSuccess from './OrderSuccess';
+import ReCAPTCHA from "react-google-recaptcha";
 
 import { useNavigate } from 'react-router-dom';
 import { useCart } from './Context/CartContext';
@@ -11,6 +12,7 @@ const ContactUs = () => {
   const navigate = useNavigate();
   const [productName, setProductName] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState(null);
 
   useEffect(() => {
     if (cartItems.length > 0) {
@@ -25,8 +27,18 @@ const ContactUs = () => {
     navigate('/');
   };
 
+  const onCaptchaChange = (value) => {
+    console.log("Captcha value:", value);
+    setCaptchaValue(value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!captchaValue) {
+      alert("Please complete the reCAPTCHA.");
+      return;
+    }
 
     if (cartItems.length > 0) {
       setShowSuccess(true);
@@ -121,6 +133,13 @@ const ContactUs = () => {
             <div className="form-group">
               <label htmlFor="message">Message</label>
               <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+            </div>
+
+            <div className="form-group" style={{ marginBottom: "20px" }}>
+              <ReCAPTCHA
+                sitekey="6LfJfAgpAAAAAKxWLLAbkYw9Vx1U-WN9fPi66Nsu"
+                onChange={onCaptchaChange}
+              />
             </div>
 
             <button type="submit" className="submit-btn">Submit</button>
