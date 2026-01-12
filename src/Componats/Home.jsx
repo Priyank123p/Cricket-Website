@@ -2,7 +2,7 @@ import React from 'react';
 import './Home.css';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { Trophy, Zap, ShieldCheck } from 'lucide-react';
-import CricketerImg from '../Img/Cricketer-IMG/Branding.png';
+import CricketerImg from '../Img/Cricketer-IMG/Branding-2.jpeg';
 import Features from './Home-All-page/Features';
 import NewArivals from './Home-All-page/NewArivals';
 import HomeSectionBaner from './Home-All-page/HomeSectionBaner';
