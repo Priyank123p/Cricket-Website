@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Search, ShoppingCart, Menu, X, Phone, Mail } from 'lucide-react';
 import './Header.css';
-import logo from '../Img/Logo/Main-Logo.png';
+import logo from '../Img/Logo/JM.png';
 import { useCart } from '../Componats/Context/CartContext';
 
 const Header = () => {
@@ -39,6 +39,18 @@ const Header = () => {
               <NavLink to="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact Us</NavLink>
             </li>
           </ul>
+
+          {/* Mobile Contact Info */}
+          <div className="mobile-contact-info">
+            <div className="mobile-contact-item">
+              <Phone size={20} />
+              <span>+91 97141 00109</span>
+            </div>
+            <div className="mobile-contact-item">
+              <Mail size={20} />
+              <span>jmsports196@gmail.com</span>
+            </div>
+          </div>
         </nav>
 
         {/* Right: Search & Cart */}

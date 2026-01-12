@@ -15,6 +15,7 @@
     background-color: #111;
     box-shadow: 0 2px 4px rgba(121, 121, 121, 0.368);
     padding: 0 2rem;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -44,12 +45,11 @@
 }
 
 .logo-img {
-    height: 235px;
+    height: 72px;
     width: auto;
     object-fit: contain;
     z-index: 1100;
     max-height: none;
-    /* Adjusted for better positioning */
     display: block;
 }
 
@@ -152,6 +152,10 @@
     /* Changed to match theme */
 }
 
+.mobile-contact-info {
+    display: none;
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 1024px) {
     .contact-info-desktop {
@@ -217,10 +221,34 @@
 
     /* Adjust Logo for Mobile */
     .logo-img {
-        height: 160px;
-        /* Increased from 120px */
+        height: 60px;
+        /* Adjusted to fit header */
         position: static;
         transform: none;
+    }
+
+    /* Mobile Contact Info */
+    .mobile-contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+
+    .mobile-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: #b0b0b0;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .mobile-contact-item svg {
+        color: #ff5825;
     }
 
     /* Search Bar Adjustment */
@@ -250,8 +278,8 @@
     }
 
     .logo-img {
-        height: 120px;
-        /* Increased from 80px */
+        height: 50px;
+        /* Adjusted for smaller screens */
     }
 }
 

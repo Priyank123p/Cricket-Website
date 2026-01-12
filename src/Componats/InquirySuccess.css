@@ -28,14 +28,12 @@
     width: 80px;
     height: 80px;
     background: #e3f2fd;
-    /* Light blue for inquiry/info */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.5rem auto;
     color: #2196f3;
-    /* Blue for inquiry */
 }
 
 .inquiry-success-title {

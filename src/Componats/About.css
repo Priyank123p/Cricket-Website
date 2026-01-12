@@ -66,28 +66,26 @@
 
 /* Glossy, Sports Brand Style Button */
 .hero-btn {
-    background: linear-gradient(135deg, #ff4757 0%, #ff6b81 100%);
-    color: white;
+    background: white;
+    color: black;
     border: none;
     padding: 16px 45px;
     font-size: 1.2rem;
     font-weight: 700;
     border-radius: 5px;
-    /* Slightly sharper for sports feel, or keep rounded */
     clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0% 100%, 0% 20%);
-    /* Sporty Cut */
     cursor: pointer;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 10px 20px rgba(255, 71, 87, 0.3);
 }
 
 .hero-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(255, 71, 87, 0.5);
+    color: white;
+    background: #ff4d00;
 }
 
 .shine {
@@ -96,7 +94,7 @@
     left: -100%;
     width: 50%;
     height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
+    background: linear-gradient(to right, transparent, rgb(254, 227, 204), transparent);
     transform: skewX(-20deg);
     animation: shine 3s infinite;
 }

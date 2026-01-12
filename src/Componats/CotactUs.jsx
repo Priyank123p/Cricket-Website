@@ -4,6 +4,7 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import OrderSuccess from './OrderSuccess';
 import InquirySuccess from './InquirySuccess';
 import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from '@emailjs/browser';
 
 import { useNavigate } from 'react-router-dom';
 import { useCart } from './Context/CartContext';
@@ -47,11 +48,83 @@ const ContactUs = () => {
       return;
     }
 
+    // Get form values
+    const form = e.target;
+
+    // Debugging: Log what values we are getting
+    console.log("Form Elements:", form.elements);
+
+    const templateParams = {
+      user_name: form.elements.fullname?.value || form.querySelector('#fullname')?.value || '',
+      user_address: form.elements.address?.value || form.querySelector('#address')?.value || '',
+      user_email: form.elements.email?.value || form.querySelector('#email')?.value || '',
+      user_mobile: form.elements.mobile?.value || form.querySelector('#mobile')?.value || '',
+      product_details: productName,
+      message: form.elements.message?.value || form.querySelector('#message')?.value || '',
+    };
+
+    console.log("Sending Email with params:", templateParams);
+
+    let templateId = "template_efiv68d";
+    let finalParams = { ...templateParams };
+
     if (cartItems.length > 0) {
-      setShowSuccess(true);
-    } else {
-      setShowInquirySuccess(true);
+      templateId = "template_ooxz8vh";
+
+      const orderId = "ORD-" + Date.now();
+
+      const orders = cartItems.map(item => {
+        // CLEAN PRICE: Remove '₹', commas, and spaces to get raw number
+        const rawPriceString = (item.price || "0").toString().replace(/[^0-9.]/g, "");
+        const price = parseFloat(rawPriceString) || 0;
+
+        return {
+          name: item.name,
+          image_url: item.image, // Assuming 'item.image' is the URL
+          units: item.quantity || 1,
+          price: price.toFixed(2) // Format as string for template
+        };
+      });
+
+      const totalCost = orders.reduce((acc, item) => acc + (parseFloat(item.price) * item.units), 0);
+
+      finalParams = {
+        ...finalParams,
+        order_id: orderId,
+        orders: orders,
+        cost: {
+          shipping: "0.00",
+          tax: "0.00",
+          total: totalCost.toFixed(2)
+        }
+      };
     }
+
+    console.log("Sending Email with params:", finalParams);
+
+    emailjs
+      .send(
+        "service_45z1p3h",
+        templateId,
+        finalParams,
+        {
+          publicKey: "CBqeI2xNDjnmcLHqY",
+        }
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          if (cartItems.length > 0) {
+            setShowSuccess(true);
+          } else {
+            setShowInquirySuccess(true);
+          }
+        },
+        (err) => {
+          console.log("FAILED...", err);
+          alert(`Failed to send email. Error: ${JSON.stringify(err)}`);
+        }
+      );
   };
 
   return (
@@ -106,28 +179,29 @@ const ContactUs = () => {
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="fullname">Full Name</label>
-              <input type="text" id="fullname" placeholder="Enter your full name" />
+              <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" />
             </div>
 
             <div className="form-group">
               <label htmlFor="address">Address</label>
-              <input type="text" id="address" placeholder="Enter your full address" />
+              <input type="text" id="address" name="address" placeholder="Enter your full address" />
             </div>
 
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
-              <input type="email" id="email" placeholder="Enter your email" />
+              <input type="email" id="email" name="email" placeholder="Enter your email" />
             </div>
 
             <div className="form-group">
               <label htmlFor="mobile">Mobile Number</label>
-              <input type="tel" id="mobile" placeholder="Enter your mobile number" />
+              <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" />
             </div>
 
             <div className="form-group">
               <label htmlFor="productName">Product Details</label>
               <textarea
                 id="productName"
+                name="productName"
                 placeholder="Product details will appear here..."
                 value={productName}
                 onChange={(e) => setProductName(e.target.value)}
@@ -137,7 +211,7 @@ const ContactUs = () => {
 
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+              <textarea id="message" name="message" rows="4" placeholder="How can we help you?"></textarea>
             </div>
 
             <div className="form-group" style={{ marginBottom: "20px" }}>
