@@ -54,13 +54,51 @@ const ContactUs = () => {
     // Debugging: Log what values we are getting
     console.log("Form Elements:", form.elements);
 
+    const fullName = form.elements.fullname?.value || form.querySelector('#fullname')?.value || '';
+    const address = form.elements.address?.value || form.querySelector('#address')?.value || '';
+    const email = form.elements.email?.value || form.querySelector('#email')?.value || '';
+    const mobile = form.elements.mobile?.value || form.querySelector('#mobile')?.value || '';
+    const baseMessage = form.elements.message?.value || form.querySelector('#message')?.value || '';
+
+    // Create a detailed message including customer info to ensure it appears even if template fields are missing
+    const detailedMessage = `
+Customer Details:
+Name: ${fullName}
+Mobile: ${mobile}
+Address: ${address}
+Email: ${email}
+
+Message:
+${baseMessage}
+    `.trim();
+
     const templateParams = {
-      user_name: form.elements.fullname?.value || form.querySelector('#fullname')?.value || '',
-      user_address: form.elements.address?.value || form.querySelector('#address')?.value || '',
-      user_email: form.elements.email?.value || form.querySelector('#email')?.value || '',
-      user_mobile: form.elements.mobile?.value || form.querySelector('#mobile')?.value || '',
+      // Standard fields
+      user_name: fullName,
+      user_address: address,
+      user_email: email,
+      user_mobile: mobile,
+
+      // Common aliases to catch various template configurations
+      to_name: "Admin",
+      from_name: fullName,
+      customer_name: fullName,
+      customer_address: address,
+      customer_email: email,
+      customer_contact: mobile,
+      reply_to: email,
+
+      // "Shotgun" approach: Add simple keys in case the template uses them directly
+      name: fullName,
+      fullname: fullName,
+      address: address,
+      mobile: mobile,
+      phone: mobile,
+      email: email,
+      contact: mobile,
+
       product_details: productName,
-      message: form.elements.message?.value || form.querySelector('#message')?.value || '',
+      message: detailedMessage,
     };
 
     console.log("Sending Email with params:", templateParams);
@@ -179,22 +217,22 @@ const ContactUs = () => {
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="fullname">Full Name</label>
-              <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" />
+              <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required />
             </div>
 
             <div className="form-group">
               <label htmlFor="address">Address</label>
-              <input type="text" id="address" name="address" placeholder="Enter your full address" />
+              <input type="text" id="address" name="address" placeholder="Enter your full address" required />
             </div>
 
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" />
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
             </div>
 
             <div className="form-group">
               <label htmlFor="mobile">Mobile Number</label>
-              <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" />
+              <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required />
             </div>
 
             <div className="form-group">
@@ -215,8 +253,10 @@ const ContactUs = () => {
             </div>
 
             <div className="form-group recaptcha-wrapper">
+              {/* Using Google Test Key to fix 'Invalid Domain' error on localhost/mobile IP. 
+                  Replace with your real key and add your domain/IP to reCAPTCHA admin console before deploying. */}
               <ReCAPTCHA
-                sitekey="6LfJfAgpAAAAAKxWLLAbkYw9Vx1U-WN9fPi66Nsu"
+                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                 onChange={onCaptchaChange}
               />
             </div>
