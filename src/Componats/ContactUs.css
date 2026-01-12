@@ -222,3 +222,17 @@
         height: 300px;
     }
 }
+
+/* ReCAPTCHA Responsive Fix */
+.recaptcha-wrapper {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 400px) {
+    .recaptcha-wrapper {
+        transform: scale(0.77);
+        transform-origin: 0 0;
+        margin-bottom: 10px;
+        /* Adjust margin after scaling */
+    }
+}

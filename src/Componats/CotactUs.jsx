@@ -214,7 +214,7 @@ const ContactUs = () => {
               <textarea id="message" name="message" rows="4" placeholder="How can we help you?"></textarea>
             </div>
 
-            <div className="form-group" style={{ marginBottom: "20px" }}>
+            <div className="form-group recaptcha-wrapper">
               <ReCAPTCHA
                 sitekey="6LfJfAgpAAAAAKxWLLAbkYw9Vx1U-WN9fPi66Nsu"
                 onChange={onCaptchaChange}
