@@ -105,16 +105,6 @@ const Product = () => {
               <option value="Above 2k">Above ₹2,000</option>
             </select>
           </div>
-
-          <div className="d-flex align-items-center gap-2 mt-3 mt-md-0">
-            <span className="text-muted small">Sort By:</span>
-            <select className="sort-dropdown" onChange={(e) => setSortBy(e.target.value)}>
-              <option value="newest">Newest</option>
-              <option value="price-low-high">Price: Low to High</option>
-              <option value="price-high-low">Price: High to Low</option>
-              <option value="best-selling">Best Selling</option>
-            </select>
-          </div>
         </motion.div>
 
         {/* Products Grid */}
