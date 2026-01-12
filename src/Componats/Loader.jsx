@@ -32,7 +32,7 @@ const Loader = () => {
 
                         {/* Stickers/Details */}
                         <rect x="25" y="150" width="50" height="40" fill="#ff481fff" opacity="0.9" />
-                        <text x="50" y="175" fontSize="10" fill="white" textAnchor="middle" fontWeight="bold" style={{ fontFamily: 'Arial' }}>RK</text>
+                        <text x="50" y="175" fontSize="10" fill="white" textAnchor="middle" fontWeight="bold" style={{ fontFamily: 'Arial' }}>MJ</text>
 
                         <defs>
                             <linearGradient id="handleGradient" x1="50" y1="10" x2="50" y2="60" gradientUnits="userSpaceOnUse">
@@ -52,7 +52,7 @@ const Loader = () => {
                         transition={{ delay: 0.8, duration: 1, ease: "easeOut" }}
                         className="brand-name"
                     >
-                        RK SPORTS
+                        MJ SPORTS
                     </motion.h1>
 
                     <motion.p

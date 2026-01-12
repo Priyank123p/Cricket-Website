@@ -18,10 +18,10 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <div className="footer-brand">
-            <h2>RK Sports</h2>
+            <h2>MJ Sports</h2>
           </div>
           <p className="brand-desc">
-            Elevating your game with premium cricket gear. Designed for champions, crafted for perfection. Experience the difference with RK Sports.
+            Elevating your game with premium cricket gear. Designed for champions, crafted for perfection. Experience the difference with MJ Sports.
           </p>
           <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
             <input
@@ -78,7 +78,7 @@ const Footer = () => {
             <div className="contact-icon-wrapper">
               <Mail size={20} />
             </div>
-            <span>support@rksports.com</span>
+            <span>support@mjsports.com</span>
           </div>
         </motion.div>
       </div>
@@ -92,7 +92,7 @@ const Footer = () => {
         viewport={{ once: true }}
       >
         <p className="copyright">
-          &copy; {new Date().getFullYear()} RK Sports. All rights reserved.
+          &copy; {new Date().getFullYear()} MJ Sports. All rights reserved.
         </p>
         <div className="social-links">
           {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (

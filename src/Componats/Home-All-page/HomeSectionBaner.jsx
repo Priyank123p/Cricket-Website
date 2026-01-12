@@ -21,7 +21,7 @@ const HomeSectionBaner = () => {
                             <h1 className="banner-title">
                                 ELEVATE YOUR <br />
                                 <span className="accent-text" data-text="GAME">GAME</span>
-                                <span className="accent-number">RK / SPORTS</span>
+                                <span className="accent-number">MJ / SPORTS</span>
                             </h1>
 
                             <p className="banner-description">

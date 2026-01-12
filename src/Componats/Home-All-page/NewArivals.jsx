@@ -80,7 +80,7 @@ const NewArivals = () => {
 
         {/* Section Heading */}
         <div className="section-heading-wrapper">
-          <h1 className="background-text">RK SPORTS</h1>
+          <h1 className="background-text">MJ SPORTS</h1>
           <motion.div
             className="section-heading"
             initial={{ opacity: 0, y: -20 }}
@@ -89,7 +89,7 @@ const NewArivals = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="section-title">Most Selling Product</h2>
-            <p className="section-subtitle">SHOP PREMIUM CRICKET BATS AT RK SPORTS</p>
+            <p className="section-subtitle">SHOP PREMIUM CRICKET BATS AT MJ SPORTS</p>
           </motion.div>
         </div>
 

@@ -67,7 +67,7 @@ const ContactUs = () => {
               <Mail size={24} />
             </div>
             <h3>Email</h3>
-            <p>support@rksports.com</p>
+            <p>support@mjsports.com</p>
           </div>
 
           <div className="info-card">

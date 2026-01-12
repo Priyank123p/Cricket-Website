@@ -50,7 +50,7 @@ const Header = () => {
             </div>
             <div className="contact-item">
               <Mail size={16} />
-              <span>info@rksports.com</span>
+              <span>info@mjsports.com</span>
             </div>
           </div>
 
