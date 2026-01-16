@@ -111,6 +111,7 @@
 /* Contact Info (Desktop Only) */
 .contact-info-desktop {
     display: flex;
+    text-align: center;
     align-items: center;
     gap: 1.5rem;
     margin-right: 1.5rem;
@@ -149,7 +150,6 @@
     display: none;
     cursor: pointer;
     color: #e0e0e0;
-    /* Changed to match theme */
 }
 
 .mobile-contact-info {
@@ -222,7 +222,6 @@
     /* Adjust Logo for Mobile */
     .logo-img {
         height: 60px;
-        /* Adjusted to fit header */
         position: static;
         transform: none;
     }
@@ -279,7 +278,6 @@
 
     .logo-img {
         height: 50px;
-        /* Adjusted for smaller screens */
     }
 }
 
