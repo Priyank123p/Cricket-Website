@@ -6,7 +6,7 @@ import { useCart } from '../Context/CartContext';
 
 import Img1 from '../../Img/Product-IMG/New Pro Players Edition-IMG.png';
 import Img2 from '../../Img/Product-IMG/New Premium Players-IMG.png';
-import Img3 from '../../Img/Product-IMG/77 CBS Edition 7 Star-IMG.png';
+import Img3 from '../../Img/Product-IMG/72 Black Edition-IMG.jpeg';
 import Img4 from '../../Img/Product-IMG/Ciel Fighter AK 47 hard tennis cricket bat-IMG.jpeg';
 
 const products = [
@@ -26,9 +26,9 @@ const products = [
   },
   {
     id: 3,
-    name: "77 CBS Edition 7 Star",
+    name: "72 Black Edition Cricket Bat",
     category: "",
-    price: "₹1,500",
+    price: "₹5,500",
     image: Img3,
   },
   {
