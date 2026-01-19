@@ -55,12 +55,12 @@ const Header = () => {
 
         {/* Right: Search & Cart */}
         <div className="header-right">
-          <div className="contact-info-desktop">
-            <div className="contact-item">
+          <div className="header-contact-details">
+            <div className="header-contact-item">
               <Phone size={16} />
               <span>+91 97141 00109</span>
             </div>
-            <div className="contact-item">
+            <div className="header-contact-item">
               <Mail size={16} />
               <span>jmsports196@gmail.com</span>
             </div>
