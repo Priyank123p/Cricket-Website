@@ -12,6 +12,7 @@ import Loader from './Componats/Loader';
 import { CartProvider } from './Componats/Context/CartContext';
 import ScrollToTop from './Componats/ScrollToTop';
 import Footer from './Layout/Footer';
+import WhatsAppButton from './Componats/WhatsAppButton';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -40,6 +41,7 @@ function App() {
               <Route path="/contact" element={<CotactUs />} />
               <Route path="/cart" element={<AddCart />} />
             </Routes>
+            <WhatsAppButton />
             <Footer />
           </BrowserRouter>
         </CartProvider>
