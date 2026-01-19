@@ -19,6 +19,12 @@ const AddCart = () => {
             {cartItems.length === 0 ? (
               <div className="cart-empty">
                 <p>Your cart is currently empty.</p>
+                <button
+                  className="continue-shopping-btn"
+                  onClick={() => navigate('/product')}
+                >
+                  Continue Shopping
+                </button>
               </div>
             ) : (
               cartItems.map((item) => (

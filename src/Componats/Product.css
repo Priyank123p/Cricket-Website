@@ -1,7 +1,8 @@
 .product-page-container {
-    background-color: #f8f9fa;
+    background-color: #121212;
     min-height: 100vh;
     padding-bottom: 4rem;
+    color: #e0e0e0;
 }
 
 /* Hero Banner */
@@ -70,21 +71,24 @@
 }
 
 .filter-sort-container {
-    background: #ffffff;
+    background: #1e1e1e;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     margin-bottom: 2rem;
     padding: 1.5rem;
+    border: 1px solid #333;
 }
 
 .filter-group h6 {
     font-weight: 600;
     margin-bottom: 0.75rem;
-    color: #333;
+    color: #e0e0e0;
 }
 
 .filter-select {
-    border: 1px solid #e0e0e0;
+    border: 1px solid #444;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
     border-radius: 8px;
     padding: 0.5rem;
     width: 100%;
@@ -100,7 +104,7 @@
     border: none;
     background: transparent;
     font-weight: 600;
-    color: #555;
+    color: #b0b0b0;
     cursor: pointer;
 }
 
@@ -111,13 +115,13 @@
 }
 
 .product-card {
-    background: #ffffff;
+    background: #1e1e1e;
     border-radius: 16px;
     padding: 1rem;
     position: relative;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid transparent;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -126,8 +130,8 @@
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: #555;
 }
 
 /* Image Wrapper & Zoom Effect */
@@ -137,7 +141,7 @@
     overflow: hidden;
     margin-bottom: 1rem;
     aspect-ratio: 1 / 1;
-    background: #f9f9f9;
+    background: #2c2c2c;
 }
 
 .product-img {
@@ -185,7 +189,7 @@
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
-    color: #222;
+    color: #ffffff;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -193,7 +197,7 @@
 
 .product-specs {
     font-size: 0.85rem;
-    color: #777;
+    color: #b0b0b0;
     margin-bottom: 0.75rem;
 }
 
@@ -213,7 +217,7 @@
 .old-price {
     font-size: 0.9rem;
     text-decoration: line-through;
-    color: #aaa;
+    color: #777;
 }
 
 .product-rating {
@@ -223,6 +227,12 @@
     display: flex;
     align-items: center;
     gap: 4px;
+}
+
+.rating-text {
+    color: #ccc;
+    /* Lighter color for rating text */
+    font-size: 0.9rem;
 }
 
 /* Add to Cart Button */
@@ -311,10 +321,10 @@
 
 /* Trust Section */
 .trust-section {
-    background: #fff;
+    background: #121212;
     padding: 3rem 0;
     margin-top: 4rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #333;
 }
 
 .trust-item {
@@ -333,7 +343,7 @@
 .trust-text {
     font-weight: 600;
     font-size: 1rem;
-    color: #333;
+    color: #e0e0e0;
 }
 
 /* =========================================

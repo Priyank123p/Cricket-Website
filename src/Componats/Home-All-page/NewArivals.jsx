@@ -104,7 +104,7 @@ const NewArivals = () => {
           {products.map((product) => (
             <motion.div
               key={product.id}
-              className="product-card"
+              className="new-arrival-card"
               variants={cardVariants}
               whileHover={{ scale: 1.02 }} // Subtle scale up on hover
             >

@@ -1,7 +1,10 @@
 .cart-page {
     padding: 3rem 2rem 3rem 2rem;
     min-height: 80vh;
-    background-color: #f5f7fa;
+    background-color: #121212;
+    /* Dark background */
+    color: #e0e0e0;
+    /* Light text */
 }
 
 .cart-container {
@@ -15,7 +18,8 @@
     font-size: 2.5rem;
     margin-bottom: 40px;
     font-weight: 700;
-    color: #333;
+    color: #ffffff;
+    /* White title */
 }
 
 .cart-content {
@@ -27,24 +31,48 @@
 
 /* Cart Items Section */
 .cart-items-container {
-    background: white;
+    background: #1e1e1e;
+    /* Dark card background */
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     padding: 20px;
+    border: 1px solid #333;
 }
 
 .cart-empty {
     text-align: center;
     padding: 60px;
-    color: #777;
+    color: #aaa;
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.continue-shopping-btn {
+    background-color: #3b82f6;
+    /* Accent color */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.continue-shopping-btn:hover {
+    background-color: #2563eb;
 }
 
 .cart-item {
     display: flex;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #333;
+    /* Darker border */
 }
 
 .cart-item:last-child {
@@ -56,8 +84,10 @@
     height: 100px;
     object-fit: contain;
     margin-right: 20px;
-    background: #f9f9f9;
+    background: #2a2a2a;
+    /* Darker image background */
     border-radius: 8px;
+    padding: 5px;
 }
 
 .cart-item-details {
@@ -67,13 +97,15 @@
 .cart-item-name {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #222;
+    color: #ffffff;
+    /* White name */
     margin-bottom: 5px;
 }
 
 .cart-item-price {
     font-size: 1rem;
-    color: #555;
+    color: #bbb;
+    /* Lighter gray price */
     margin-bottom: 10px;
 }
 
@@ -91,26 +123,30 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1px solid #ddd;
-    background: white;
+    border: 1px solid #444;
+    /* Darker border */
+    background: #2a2a2a;
+    /* Dark button bg */
     cursor: pointer;
-    color: #333;
+    color: #fff;
+    /* White icon */
     transition: all 0.2s;
 }
 
 .qty-btn:hover:not(:disabled) {
-    background: #f0f0f0;
-    border-color: #bbb;
+    background: #333;
+    border-color: #555;
 }
 
 .qty-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    background: #f9f9f9;
+    background: #222;
+    color: #666;
 }
 
 .quantity-value {
-    color: black;
+    color: #fff;
     font-size: 1rem;
     font-weight: 600;
     min-width: 20px;
@@ -119,8 +155,9 @@
 
 .remove-btn {
     background: transparent;
-    color: #e74c3c;
-    border: 1px solid #e74c3c;
+    color: #ef4444;
+    /* Red for remove */
+    border: 1px solid #ef4444;
     padding: 8px 16px;
     border-radius: 20px;
     cursor: pointer;
@@ -129,23 +166,26 @@
 }
 
 .remove-btn:hover {
-    background: #e74c3c;
+    background: #ef4444;
     color: white;
 }
 
 /* Cart Summary Section */
 .cart-summary {
-    background: white;
+    background: #1e1e1e;
+    /* Dark card background */
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     padding: 30px;
+    border: 1px solid #333;
 }
 
 .summary-title {
     font-size: 1.5rem;
+    color: #ffffff;
     margin-bottom: 25px;
     font-weight: 600;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #333;
     padding-bottom: 15px;
 }
 
@@ -154,23 +194,24 @@
     justify-content: space-between;
     margin-bottom: 15px;
     font-size: 1.1rem;
-    color: #555;
+    color: #ccc;
 }
 
 .summary-row.total {
     font-weight: 700;
-    color: #222;
+    color: #ffffff;
     font-size: 1.3rem;
     margin-top: 20px;
-    border-top: 2px solid #eee;
+    border-top: 2px solid #333;
     padding-top: 20px;
 }
 
 .checkout-btn {
     width: 100%;
     padding: 15px;
-    background-color: #222;
-    color: white;
+    background-color: #fff;
+    /* White button for contrast */
+    color: #000;
     border: none;
     border-radius: 8px;
     font-size: 1.1rem;
@@ -181,7 +222,7 @@
 }
 
 .checkout-btn:hover {
-    background-color: #444;
+    background-color: #e0e0e0;
 }
 
 @media (max-width: 768px) {

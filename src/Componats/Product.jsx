@@ -190,7 +190,7 @@ const ProductCard = ({ product, addToCart, index }) => {
             {[...Array(5)].map((_, i) => (
               <Star key={i} size={14} fill={i < Math.floor(product.rating) ? "#ffc107" : "none"} stroke="#ffc107" />
             ))}
-            <span className="text-muted ms-1">({product.rating})</span>
+            <span className="rating-text ms-1">({product.rating})</span>
           </div>
 
           <div className="product-price-row">
