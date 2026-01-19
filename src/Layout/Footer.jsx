@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin, Send } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -45,9 +46,14 @@ const Footer = () => {
         >
           <h3 className="footer-heading">Quick Links</h3>
           <ul className="footer-links">
-            {['Home', 'Product', 'About Us', 'Contact Us'].map((item) => (
-              <li key={item} className="footer-link-item">
-                <a href="#" className="footer-link">{item}</a>
+            {[
+              { name: 'Home', path: '/' },
+              { name: 'Product', path: '/product' },
+              { name: 'About Us', path: '/about' },
+              { name: 'Contact Us', path: '/contact' }
+            ].map((item) => (
+              <li key={item.name} className="footer-link-item">
+                <Link to={item.path} className="footer-link">{item.name}</Link>
               </li>
             ))}
           </ul>
@@ -95,11 +101,12 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} JM Sports. All rights reserved.
         </p>
         <div className="social-links">
-          {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
-            <a key={index} href="#" className="social-icon">
-              <Icon size={18} />
-            </a>
-          ))}
+          <a href="https://www.facebook.com/profile.php?id=61586163163701" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <Facebook size={18} />
+          </a>
+          <a href="https://www.instagram.com/jmsports196/" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <Instagram size={18} />
+          </a>
         </div>
       </motion.div>
     </footer>

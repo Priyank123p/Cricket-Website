@@ -14,6 +14,7 @@
     font-family: var(--footer-font-text);
     position: relative;
     overflow: hidden;
+   
 }
 
 .footer-gradient-border {
@@ -29,9 +30,10 @@
 .footer-content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 2rem;
+    gap: 4rem;
     margin-bottom: 3rem;
     padding: 0 1rem;
+    text-align: center;
 }
 
 .footer-col-brand {
@@ -88,6 +90,7 @@
     line-height: 1.6;
     opacity: 0.8;
     max-width: 300px;
+    margin: 0 auto;
 }
 
 .footer-heading {
@@ -103,9 +106,10 @@
 .footer-heading::after {
     content: '';
     position: absolute;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: -8px;
-    width: 40px;
+    width: 115px;
     height: 3px;
     background-color: var(--footer-accent);
     border-radius: 2px;
@@ -153,7 +157,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
 }
 
 .contact-icon-wrapper {
@@ -185,6 +189,10 @@
     display: flex;
     margin-top: 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .newsletter-input {
@@ -321,6 +329,7 @@
     .newsletter-form {
         margin-top: 1.5rem;
         width: 100%;
+        max-width: 100%;
     }
 
     .footer-links {
