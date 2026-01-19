@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ContactUs.css';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import OrderSuccess from './OrderSuccess';
 import InquirySuccess from './InquirySuccess';
 import ReCAPTCHA from "react-google-recaptcha";
@@ -73,7 +73,6 @@ ${baseMessage}
     `.trim();
 
     const templateParams = {
-      // Standard fields
       user_name: fullName,
       user_address: address,
       user_email: email,
@@ -118,9 +117,9 @@ ${baseMessage}
 
         return {
           name: item.name,
-          image_url: item.image, // Assuming 'item.image' is the URL
+          image_url: item.image,
           units: item.quantity || 1,
-          price: price.toFixed(2) // Format as string for template
+          price: price.toFixed(2)
         };
       });
 
@@ -182,29 +181,9 @@ ${baseMessage}
             <p>318 Shivalik Satyamev, Ambli - Bopal Rd, Crossroad, Bopal, Ahmedabad, Gujarat 380058</p>
           </div>
 
-          <div className="info-card">
-            <div className="icon-box">
-              <Phone size={24} />
-            </div>
-            <h3>Phone</h3>
-            <p>+91 97141 00109</p>
-          </div>
 
-          <div className="info-card">
-            <div className="icon-box">
-              <Mail size={24} />
-            </div>
-            <h3>Email</h3>
-            <p>jmsports196@gmail.com</p>
-          </div>
 
-          <div className="info-card">
-            <div className="icon-box">
-              <Clock size={24} />
-            </div>
-            <h3>Working Hours</h3>
-            <p>Mon – Fri : 09:00 AM – 07:00 PM</p>
-          </div>
+          {/* Email and Working Hours removed as per request */}
         </div>
 
         {/* 3. Contact Form Section */}
