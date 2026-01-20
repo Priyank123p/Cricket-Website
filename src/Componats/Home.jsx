@@ -1,12 +1,18 @@
 import React from 'react';
-import './Home.css';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
-import { Trophy, Zap, ShieldCheck } from 'lucide-react';
-import CricketerImg from '../Img/Cricketer-IMG/Branding-2.jpeg';
+import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+
+import './Home.css';
 import Features from './Home-All-page/Features';
 import NewArivals from './Home-All-page/NewArivals';
 import HomeSectionBaner from './Home-All-page/HomeSectionBaner';
-import { Link } from 'react-router-dom';
+
+import CricketerImg from '../Img/Cricketer-IMG/Branding-2.jpeg';
+import ExploreOurCollections from './Home-All-page/ExploreOurCollections';
 
 const Home = () => {
   // Mouse Motion Values
@@ -125,7 +131,50 @@ const Home = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Auto Slider Section */}
+      <div className="promo-slider-section">
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={0}
+          slidesPerView={1}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop={true}
+          className="promo-swiper"
+        >
+          <SwiperSlide>
+            <div className="promo-slide-content">
+              <div className="slide-image-container"></div>
+              <div className="slide-text-container">
+                <h2 className="slide-title">SHOP FOR Rs.5000 AND ABOVE</h2>
+                <div className="slide-offer-box">
+                  <h3>Get Free Accessories worth Rs.500</h3>
+                </div>
+                <Link to="/product">
+                  <button className="slide-shop-btn">SHOP NOW</button>
+                </Link>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="promo-slide-content">
+              <div className="slide-image-container"></div>
+              <div className="slide-text-container">
+                <h2 className="slide-title">KASHMIR WILLOW BATS</h2>
+                <div className="slide-offer-box">
+                  <h3>Professional Grade Performance</h3>
+                </div>
+                <Link to="/product">
+                  <button className="slide-shop-btn">SHOP NOW</button>
+                </Link>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+
       <Features />
+      <ExploreOurCollections />
       <NewArivals />
       <HomeSectionBaner />
     </>

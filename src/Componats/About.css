@@ -34,7 +34,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.941) 90%);
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.696) 0%, rgba(0, 0, 0, 0.811) 90%);
     z-index: 0;
 }
 
@@ -162,7 +162,7 @@
     font-size: 1.3rem;
     margin-bottom: 10px;
     font-weight: 700;
-    color: rgb(71, 71, 71);
+    color: rgb(27, 27, 27);
 }
 
 .craft-card p {

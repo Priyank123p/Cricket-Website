@@ -95,7 +95,7 @@ const AboutUs = () => {
       <section className="section craftsmanship">
         <div className="container">
           <motion.h2
-            className="text-center mb-5"
+            className="text-center mb-5 text-black"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -105,7 +105,7 @@ const AboutUs = () => {
 
           <div className="cards-grid">
             {[
-              { icon: <Star size={40} />, title: "Premium Willow", desc: "Grade 1+ English Willow sourced directly." },
+              { icon: <Star size={40} />, title: "Premium Willow", desc: "Grade 1+ Kashmir Willow sourced directly." },
               { icon: <Hammer size={40} />, title: "Handcrafted", desc: "Shaped by master artisans with decades of experience." },
               { icon: <Zap size={40} />, title: "Perfect Balance", desc: "Engineered for an ultra-light pickup and massive ping." },
               { icon: <ShieldCheck size={40} />, title: "Player Tested", desc: "Every bat is tested for durability and stroke." }

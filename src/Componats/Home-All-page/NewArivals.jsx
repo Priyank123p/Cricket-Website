@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, ShoppingCart } from 'lucide-react';
+import { Heart, ShoppingCart, Truck, Star } from 'lucide-react';
 import './NewArivals.css';
 import { useCart } from '../Context/CartContext';
 
@@ -75,63 +75,92 @@ const NewArivals = () => {
   };
 
   return (
-    <section className="new-arrivals-section">
-      <div className="container">
+    <>
 
-        {/* Section Heading */}
-        <div className="section-heading-wrapper">
-          <h1 className="background-text">JM SPORTS</h1>
-          <motion.div
-            className="section-heading"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="section-title">Most Selling Product</h2>
-            <p className="section-subtitle">SHOP PREMIUM CRICKET BATS AT JM SPORTS</p>
-          </motion.div>
-        </div>
+      <section className="new-arrivals-section">
+        <div className="container">
 
-        {/* Product Grid */}
-        <motion.div
-          className="products-grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          {products.map((product) => (
+          {/* Section Heading */}
+          <div className="section-heading-wrapper">
+            <h1 className="background-text">JM SPORTS</h1>
             <motion.div
-              key={product.id}
-              className="new-arrival-card"
-              variants={cardVariants}
-              whileHover={{ scale: 1.02 }} // Subtle scale up on hover
+              className="section-heading"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
             >
-              <div className="image-wrapper">
-                <img src={product.image} alt={product.name} className="product-image" />
+              <h2 className="section-title">Most Selling Product</h2>
+              <p className="section-subtitle">SHOP PREMIUM CRICKET BATS AT JM SPORTS</p>
+            </motion.div>
+          </div>
 
-                <div className="add-to-cart-overlay">
+          {/* Product Grid */}
+          <motion.div
+            className="products-grid"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {products.map((product) => (
+              <motion.div
+                key={product.id}
+                className="new-arrival-card"
+                variants={cardVariants}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="image-wrapper">
+                  <img src={product.image} alt={product.name} className="product-image" />
+
+                  <button className="wishlist-btn" aria-label="Add to Wishlist">
+                    <Heart size={20} />
+                  </button>
+                </div>
+
+                <div className="product-details">
+                  <div className="product-category">{product.category || "Cricket Bat"}</div>
+                  <h3 className="product-name">{product.name}</h3>
+                  <div className="star-rating">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} fill="#FFC107" color="#FFC107" />
+                    ))}
+                    <span className="rating-count">(12)</span>
+                  </div>
+                  <div className="product-price">{product.price}</div>
+
                   <button className="add-btn" onClick={() => handleAddToCart(product)}>
                     <ShoppingCart size={18} />
                     Add to Cart
                   </button>
                 </div>
-              </div>
+              </motion.div>
+            ))}
+          </motion.div>
 
-              <div className="product-details">
-                <div>
-                  <div className="product-category">{product.category}</div>
-                  <h3 className="product-name">{product.name}</h3>
-                </div>
-                <div className="product-price">{product.price}</div>
-              </div>
-            </motion.div>
+        </div>
+      </section>
+
+      {/* Free Shipping Marquee */}
+      <div className="marquee-container">
+        <div className="marquee-content">
+          {[...Array(10)].map((_, index) => (
+            <div className="marquee-item" key={index}>
+              <Truck size={24} />
+              <span>Free Shipping</span>
+            </div>
           ))}
-        </motion.div>
-
+          {/* Duplicate for seamless loop */}
+          {[...Array(10)].map((_, index) => (
+            <div className="marquee-item" key={`duplicate-${index}`}>
+              <Truck size={24} />
+              <span>Free Shipping</span>
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
+
+    </>
   );
 };
 

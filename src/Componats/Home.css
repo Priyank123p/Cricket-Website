@@ -14,7 +14,7 @@ body {
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
-    background-color: #111;
+    background-color: #ffffff;
     color: #e2e8f0;
     font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -28,10 +28,9 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     overflow: hidden;
-    background:
-        radial-gradient(circle at 10% 20%, rgba(255, 77, 0, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(0, 242, 234, 0.1) 0%, transparent 40%),
-        linear-gradient(135deg, #020617 0%, #0f172a 100%);
+    background: #ffffff;
+    /* Changed to white */
+    /* Removed dark gradients */
 }
 
 /* Background Geometric Grid */
@@ -43,9 +42,10 @@ body {
     right: 0;
     bottom: 0;
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
     mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
     pointer-events: none;
     z-index: 0;
@@ -75,20 +75,23 @@ body {
     font-weight: 900;
     line-height: 0.95;
     text-transform: uppercase;
-    color: white;
+    color: #0f172a;
+    /* Changed to dark color */
     margin-bottom: 2rem;
     font-style: italic;
 }
 
 .main-headline .highlight-text {
     color: transparent;
-    -webkit-text-stroke: 2px #f27d00;
+    -webkit-text-stroke: 2px #ff4d00;
+    /* Adjusted stroke color if needed, kept orange */
     position: relative;
 }
 
 .description-text {
     font-size: 1.1rem;
-    color: #94a3b8;
+    color: #475569;
+    /* Changed to slate-600 */
     max-width: 500px;
     line-height: 1.6;
     margin-bottom: 3rem;
@@ -111,7 +114,8 @@ body {
 .stat-number {
     font-size: 2.5rem;
     font-weight: 800;
-    color: white;
+    color: #0f172a;
+    /* Changed to dark color */
 }
 
 .stat-label {
@@ -161,8 +165,8 @@ body {
     object-fit: contain;
     z-index: 5;
     filter: drop-shadow(-20px 0 50px rgba(0, 0, 0, 0.5));
-    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
     border: 3px solid rgba(255, 77, 0, 0.3);
     border-radius: 20px;
     padding: 10px;
@@ -264,5 +268,135 @@ body {
 
     .stats-row {
         flex-wrap: wrap;
+    }
+}
+
+/* --- Promo Slider Section --- */
+.promo-slider-section {
+    width: 100%;
+    background: #fff;
+    padding: 0;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.promo-swiper {
+    width: 100%;
+    height: auto;
+}
+
+.promo-slide-content {
+    display: flex;
+    width: 100%;
+    min-height: 400px;
+    background: #fff;
+}
+
+/* match the image: left side image, right side blue content */
+.slide-image-container {
+    flex: 1;
+    background: url('../Img/product-banner.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay gradient for image side if needed */
+.slide-image-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.slide-text-container {
+    flex: 1;
+    background: #1e3a8a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem;
+    position: relative;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    margin-left: -19%;
+    z-index: 5;
+}
+
+.slide-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.slide-offer-box {
+    background: white;
+    color: #1e3a8a;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.slide-offer-box h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.slide-shop-btn {
+    background: #ff0000;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slide-shop-btn:hover {
+    background: #dc2626;
+}
+
+/* Responsive adjustments for Slider */
+@media (max-width: 1024px) {
+    .promo-slide-content {
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .slide-image-container {
+        height: 300px;
+        width: 100%;
+        background-color: #f1f5f9;
+    }
+
+    .slide-text-container {
+        width: 100%;
+        margin-left: 0;
+        clip-path: none;
+        /* Remove clip path on mobile */
+        padding: 2rem 1rem;
+    }
+
+    .slide-title {
+        font-size: 1.8rem;
+    }
+
+    .slide-offer-box h3 {
+        font-size: 1.2rem;
     }
 }
