@@ -2,9 +2,9 @@
     max-width: 100%;
     margin: 0;
     padding: 4rem 1rem;
-    background-color: #050505;
+    background-color: #ffffff;
     font-family: 'Inter', sans-serif;
-    color: #e0e0e0;
+    color: #333333;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -22,16 +22,13 @@
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 15px;
-    background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #000000;
     letter-spacing: -1px;
 }
 
 .contact-header p {
     font-size: 1.2rem;
-    color: #999;
+    color: #666;
 }
 
 /* Layout for Content */
@@ -58,10 +55,10 @@
 }
 
 .info-card {
-    background: #111;
+    background: #f9f9f9;
     padding: 30px 40px;
     border-radius: 16px;
-    border: 1px solid #222;
+    border: 1px solid #e0e0e0;
     text-align: center;
     flex: 0 1 350px;
     /* Don't grow indefinitely, start at 350px */
@@ -71,7 +68,7 @@
 
 /* Icon Box */
 .icon-box {
-    background: #1a1a1a;
+    background: #eeeeee;
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -79,29 +76,29 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
-    color: #fff;
-    border: 1px solid #333;
+    color: #000;
+    border: 1px solid #ddd;
 }
 
 .info-card h3 {
     font-size: 1.4rem;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #fff;
+    color: #000;
 }
 
 .info-card p {
-    color: #aaa;
+    color: #555;
     font-size: 1rem;
     line-height: 1.6;
 }
 
 /* Contact Form Section */
 .contact-form-section {
-    background: #0a0a0a;
+    background: #f4f4f4;
     padding: 60px;
     border-radius: 20px;
-    border: 1px solid #222;
+    border: 1px solid #e0e0e0;
     width: 100%;
     max-width: 900px;
     position: relative;
@@ -116,7 +113,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, transparent 60%);
     pointer-events: none;
 }
 
@@ -130,12 +127,12 @@
 .form-header h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #fff;
+    color: #000;
     font-weight: 700;
 }
 
 .form-header p {
-    color: #777;
+    color: #555;
     margin-bottom: 0;
 }
 
@@ -160,8 +157,8 @@
 .contact-form label {
     display: block;
     margin-bottom: 12px;
-    font-weight: 500;
-    color: #ccc;
+    font-weight: 600;
+    color: #333;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -174,22 +171,22 @@
     /* Underline style */
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #ccc;
     font-size: 1.1rem;
-    color: #fff;
+    color: #000;
     transition: all 0.3s ease;
     border-radius: 0;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: #444;
+    color: #888;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-bottom-color: #fff;
+    border-bottom-color: #000;
     /* High contrast focus */
 }
 
@@ -203,8 +200,8 @@
     width: 100%;
     padding: 20px;
     margin-top: 20px;
-    background: #fff;
-    color: #000;
+    background: #000;
+    color: #fff;
     border: none;
     border-radius: 50px;
     font-size: 1.1rem;
@@ -214,7 +211,7 @@
 }
 
 .submit-btn:hover {
-    background: #e0e0e0;
+    background: #333;
     transform: scale(1.01);
 }
 
@@ -225,10 +222,9 @@
     margin: 40px auto 0;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     /* Keep shadow */
-    border: 1px solid #222;
-    /* Filter removed to restore original UI */
+    border: 1px solid #e0e0e0;
 }
 
 /* Responsive */

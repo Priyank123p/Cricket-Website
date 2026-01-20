@@ -116,7 +116,7 @@ const Product = () => {
               <React.Fragment key={product.id}>
 
 
-                <Col xs={12} md={6} lg={4} xl={3}>
+                <Col xs={6} md={6} lg={4} xl={3}>
                   <ProductCard product={product} addToCart={addToCart} index={index} />
                 </Col>
               </React.Fragment>
@@ -213,16 +213,18 @@ const ProductCard = ({ product, addToCart, index }) => {
           <h3 className="product-title">{product.name}</h3>
           <div className="product-specs">{product.brand} | {product.weight}</div>
 
-          <div className="product-rating">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} size={14} fill={i < Math.floor(product.rating) ? "#ffc107" : "none"} stroke="#ffc107" />
-            ))}
-            <span className="rating-text ms-1">({product.rating})</span>
-          </div>
+          <div className="product-meta-row">
+            <div className="product-price-block">
+              <span className="current-price">{product.price}</span>
+              <span className="old-price">{product.oldPrice}</span>
+            </div>
 
-          <div className="product-price-row">
-            <span className="current-price">{product.price}</span>
-            <span className="old-price">{product.oldPrice}</span>
+            <div className="product-rating">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={12} fill={i < Math.floor(product.rating) ? "#ffc107" : "none"} stroke="#ffc107" />
+              ))}
+              <span className="rating-text">({product.rating})</span>
+            </div>
           </div>
         </div>
 
