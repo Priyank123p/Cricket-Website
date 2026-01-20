@@ -1,10 +1,10 @@
 .cart-page {
     padding: 3rem 2rem 3rem 2rem;
     min-height: 80vh;
-    background-color: #121212;
-    /* Dark background */
-    color: #e0e0e0;
-    /* Light text */
+    background-color: #f9fafb;
+    /* Light background */
+    color: #1f2937;
+    /* Dark text */
 }
 
 .cart-container {
@@ -18,8 +18,8 @@
     font-size: 2.5rem;
     margin-bottom: 40px;
     font-weight: 700;
-    color: #ffffff;
-    /* White title */
+    color: #111827;
+    /* Dark title */
 }
 
 .cart-content {
@@ -31,18 +31,18 @@
 
 /* Cart Items Section */
 .cart-items-container {
-    background: #1e1e1e;
-    /* Dark card background */
+    background: #ffffff;
+    /* White card background */
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     padding: 20px;
-    border: 1px solid #333;
+    border: 1px solid #e5e7eb;
 }
 
 .cart-empty {
     text-align: center;
     padding: 60px;
-    color: #aaa;
+    color: #6b7280;
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;
@@ -71,8 +71,8 @@
     display: flex;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 1px solid #333;
-    /* Darker border */
+    border-bottom: 1px solid #e5e7eb;
+    /* Light border */
 }
 
 .cart-item:last-child {
@@ -84,8 +84,8 @@
     height: 100px;
     object-fit: contain;
     margin-right: 20px;
-    background: #2a2a2a;
-    /* Darker image background */
+    background: #f3f4f6;
+    /* Light gray image background */
     border-radius: 8px;
     padding: 5px;
 }
@@ -97,15 +97,15 @@
 .cart-item-name {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #ffffff;
-    /* White name */
+    color: #111827;
+    /* Dark name */
     margin-bottom: 5px;
 }
 
 .cart-item-price {
     font-size: 1rem;
-    color: #bbb;
-    /* Lighter gray price */
+    color: #4b5563;
+    /* Gray price */
     margin-bottom: 10px;
 }
 
@@ -123,30 +123,30 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1px solid #444;
-    /* Darker border */
-    background: #2a2a2a;
-    /* Dark button bg */
+    border: 1px solid #d1d5db;
+    /* Light border */
+    background: #f9fafb;
+    /* Light button bg */
     cursor: pointer;
-    color: #fff;
-    /* White icon */
+    color: #374151;
+    /* Dark icon */
     transition: all 0.2s;
 }
 
 .qty-btn:hover:not(:disabled) {
-    background: #333;
-    border-color: #555;
+    background: #e5e7eb;
+    border-color: #9ca3af;
 }
 
 .qty-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    background: #222;
-    color: #666;
+    background: #f3f4f6;
+    color: #9ca3af;
 }
 
 .quantity-value {
-    color: #fff;
+    color: #111827;
     font-size: 1rem;
     font-weight: 600;
     min-width: 20px;
@@ -172,20 +172,20 @@
 
 /* Cart Summary Section */
 .cart-summary {
-    background: #1e1e1e;
-    /* Dark card background */
+    background: #ffffff;
+    /* White card background */
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     padding: 30px;
-    border: 1px solid #333;
+    border: 1px solid #e5e7eb;
 }
 
 .summary-title {
     font-size: 1.5rem;
-    color: #ffffff;
+    color: #111827;
     margin-bottom: 25px;
     font-weight: 600;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #e5e7eb;
     padding-bottom: 15px;
 }
 
@@ -194,24 +194,24 @@
     justify-content: space-between;
     margin-bottom: 15px;
     font-size: 1.1rem;
-    color: #ccc;
+    color: #4b5563;
 }
 
 .summary-row.total {
     font-weight: 700;
-    color: #ffffff;
+    color: #111827;
     font-size: 1.3rem;
     margin-top: 20px;
-    border-top: 2px solid #333;
+    border-top: 2px solid #e5e7eb;
     padding-top: 20px;
 }
 
 .checkout-btn {
     width: 100%;
     padding: 15px;
-    background-color: #fff;
-    /* White button for contrast */
-    color: #000;
+    background-color: #111827;
+    /* Dark button for contrast on white */
+    color: #ffffff;
     border: none;
     border-radius: 8px;
     font-size: 1.1rem;
@@ -222,7 +222,7 @@
 }
 
 .checkout-btn:hover {
-    background-color: #e0e0e0;
+    background-color: #374151;
 }
 
 @media (max-width: 768px) {
