@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Dropdown, Spinner } from 'react-bootstrap';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingCart, Star, Check, Filter, ArrowRight, ShieldCheck, Truck, RefreshCw, CreditCard } from 'lucide-react';
+import { ShoppingCart, Star, Check, Filter, ArrowRight, ShieldCheck, Truck, RefreshCw, CreditCard, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCart } from './Context/CartContext';
 import brandingImg from '../Img/Branding-IMG/WhatsApp Image 2026-01-12 at 5.15.28 PM.jpeg';
 import productBanner from '../Img/AboutUs-IMG/Product-Banner.jpeg';
@@ -29,8 +29,10 @@ const Product = () => {
         // Map images to public folder path
         const processedData = jsonData.map(item => ({
           ...item,
-          // Use public folder path. Ensure item.image is just the filename.
-          image: item.image ? `/product-images/${item.image}` : ""
+          // Handle multiple images separated by comma
+          image: item.image
+            ? item.image.toString().split(',').map(img => `/product-images/${img.trim()}`)
+            : []
         }));
 
         setProducts(processedData);
@@ -139,6 +141,22 @@ const Product = () => {
 const ProductCard = ({ product, addToCart, index }) => {
   const [loading, setLoading] = useState(false);
   const [added, setAdded] = useState(false);
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
+  const images = Array.isArray(product.image) ? product.image : (product.image ? [product.image] : []);
+  const hasMultipleImages = images.length > 1;
+
+  const nextImage = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setCurrentImgIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setCurrentImgIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
 
   const handleAddToCart = () => {
     setLoading(true);
@@ -146,8 +164,6 @@ const ProductCard = ({ product, addToCart, index }) => {
       addToCart(product);
       setLoading(false);
       setAdded(true);
-
-      // Allow re-adding after 2 seconds or keep as added?
       setTimeout(() => setAdded(false), 2000);
     }, 500);
   };
@@ -167,9 +183,20 @@ const ProductCard = ({ product, addToCart, index }) => {
         )}
 
         <div className="product-img-wrapper">
-          {product.image && product.image.toLowerCase().endsWith('.mp4') ? (
+          {hasMultipleImages && (
+            <>
+              <button className="slider-btn prev" onClick={prevImage}>
+                <ChevronLeft size={16} />
+              </button>
+              <button className="slider-btn next" onClick={nextImage}>
+                <ChevronRight size={16} />
+              </button>
+            </>
+          )}
+
+          {images[currentImgIndex] && images[currentImgIndex].toLowerCase().endsWith('.mp4') ? (
             <video
-              src={product.image}
+              src={images[currentImgIndex]}
               className="product-img"
               autoPlay
               muted
@@ -178,7 +205,7 @@ const ProductCard = ({ product, addToCart, index }) => {
               style={{ objectFit: 'cover' }}
             />
           ) : (
-            <img src={product.image} alt={product.name} className="product-img" />
+            <img src={images[currentImgIndex]} alt={product.name} className="product-img" />
           )}
         </div>
 
