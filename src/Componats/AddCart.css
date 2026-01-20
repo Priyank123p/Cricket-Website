@@ -274,3 +274,16 @@
         font-size: 2rem;
     }
 }
+
+/* Empty State Style */
+.cart-items-container.empty-cart-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+
+.cart-items-container.empty-cart-container .cart-empty {
+    width: 100%;
+}

@@ -15,7 +15,7 @@ const AddCart = () => {
 
         <div className="cart-content">
           {/* Cart Items List */}
-          <div className="cart-items-container">
+          <div className={`cart-items-container ${cartItems.length === 0 ? 'empty-cart-container' : ''}`}>
             {cartItems.length === 0 ? (
               <div className="cart-empty">
                 <p>Your cart is currently empty.</p>
