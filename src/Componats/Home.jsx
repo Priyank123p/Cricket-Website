@@ -11,7 +11,7 @@ import Features from './Home-All-page/Features';
 import NewArivals from './Home-All-page/NewArivals';
 import HomeSectionBaner from './Home-All-page/HomeSectionBaner';
 
-import CricketerImg from '../Img/Cricketer-IMG/Branding-2.png';
+import CricketerImg from '../Img/Cricketer-IMG/Branding-3.jpg';
 import ExploreOurCollections from './Home-All-page/ExploreOurCollections';
 
 const Home = () => {
