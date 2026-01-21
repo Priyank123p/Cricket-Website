@@ -7,7 +7,7 @@ import { useCart } from './Context/CartContext';
 import brandingImg from '../Img/Branding-IMG/WhatsApp Image 2026-01-12 at 5.15.28 PM.jpeg';
 import productBanner from '../Img/AboutUs-IMG/Product-Banner.jpeg';
 import './Product.css';
-import * as XLSX from 'xlsx';
+
 
 
 const Product = () => {
@@ -19,27 +19,80 @@ const Product = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/products.xlsx');
-        const arrayBuffer = await response.arrayBuffer();
-        const workbook = XLSX.read(arrayBuffer, { type: 'array' });
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
-        const jsonData = XLSX.utils.sheet_to_json(sheet);
+        const timestamp = new Date().getTime();
+        const SHEET_URL = `https://docs.google.com/spreadsheets/d/e/2PACX-1vTJ-A4bqSpTZp0uox5KFH7cF03M8-fYNfSP_Wr5vNe75QhXiflNQDzr4W1l6073ceS3SSmjQu9Ieaij/pub?output=csv&cacheBust=${timestamp}`;
+        console.log("Fetching data from:", SHEET_URL);
 
-        // Helper to get value case-insensitively
-        const getValue = (obj, key) => {
-          const foundKey = Object.keys(obj).find(k => k.toLowerCase() === key.toLowerCase());
-          return foundKey ? obj[foundKey] : undefined;
+        const response = await fetch(SHEET_URL);
+        const text = await response.text();
+        console.log("Fetched data length:", text.length);
+
+        // Simple CSV splitter that handles basic quotes
+        const splitCSV = (str) => {
+          const result = [];
+
+          // Regex to match CSV fields: 
+          // 1. Quoted string: "..." (handling escaped quotes "")
+          // 2. Non-quoted string: anything until comma
+          const regex = /(?:^|,)(?:"([^"]*(?:""[^"]*)*)"|([^",]*))/g;
+
+          let matches;
+          while ((matches = regex.exec(str)) !== null) {
+            // Index 1 is quoted value, Index 2 is unquoted value
+            let value = matches[1] ? matches[1].replace(/""/g, '"') : matches[2];
+            result.push(value ? value.trim() : '');
+          }
+          return result;
         };
 
-        // Map images to public folder path and calculate prices
-        const processedData = jsonData.map(item => {
-          const rawPrice = getValue(item, 'price');
-          const rawDiscount = getValue(item, 'discount');
-          const rawImage = getValue(item, 'image');
+        const lines = text.split(/\r?\n/).map(line => line.trim()).filter(line => line);
+        if (lines.length < 2) return;
 
-          const mrp = Number(rawPrice) || 0; // Base price from Excel (now treated as MRP)
-          const discount = Number(rawDiscount) || 0; // Discount percentage
+        // Parse headers (assume first line is header)
+        // Note: splitCSV returns an array including the empty match at end sometimes, so we filter/map carefully
+        // But using a simpler split might be safer if we assume simple data. 
+        // Let's use the explicit loop parser which is more robust than regex for edge cases, 
+        // or a proven regex. The loop parser I wrote in test_csv_parse.js is good.
+
+        const parseLine = (str) => {
+          const result = [];
+          let current = '';
+          let inQuote = false;
+          for (let i = 0; i < str.length; i++) {
+            const char = str[i];
+            if (char === '"') {
+              inQuote = !inQuote;
+            } else if (char === ',' && !inQuote) {
+              result.push(current.trim());
+              current = '';
+            } else {
+              current += char;
+            }
+          }
+          result.push(current.trim());
+          return result.map(v => v.replace(/^"|"$/g, '').replace(/""/g, '"'));
+        };
+
+        const headers = parseLine(lines[0]).map(h => h.toLowerCase());
+
+        const processedData = lines.slice(1).map(line => {
+          const values = parseLine(line);
+          const row = {};
+          headers.forEach((h, i) => {
+            if (i < values.length) {
+              row[h] = values[i];
+            }
+          });
+
+          const rawPrice = row.price;
+          const rawDiscount = row.discount;
+          const rawImage = row.image;
+
+          // Cleaning formatting if needed (e.g. remove commas in numbers)
+          const cleanNumber = (val) => Number(String(val).replace(/[^0-9.]/g, '')) || 0;
+
+          const mrp = cleanNumber(rawPrice);
+          const discount = cleanNumber(rawDiscount);
 
           let sellingPrice = mrp;
           let displayOldPrice = null;
@@ -52,32 +105,25 @@ const Product = () => {
           const displayPrice = '₹' + Math.floor(sellingPrice).toLocaleString('en-IN');
 
           return {
-            ...item,
-            // Normalize keys for the rest of the app
-            name: getValue(item, 'name'),
-            brand: getValue(item, 'brand'),
-            weight: getValue(item, 'weight'),
-            rating: getValue(item, 'rating'),
-            badge: getValue(item, 'badge'),
-
-            // Overwrite price with the calculated selling price for display/sorting
+            id: row.id || Math.random(), // fallback ID
+            name: row.name,
+            brand: row.brand,
+            weight: row.weight,
+            rating: row.rating,
+            badge: row.badge,
             price: displayPrice,
-            // Set oldPrice dynamically
             oldPrice: displayOldPrice,
-            // Keep the raw values for reference if needed
             originalPrice: mrp,
             discountPercentage: discount,
-
-            // Handle multiple images separated by comma
             image: rawImage
-              ? rawImage.toString().split(',').map(img => `/product-images/${img.trim()}`)
+              ? String(rawImage).split(',').map(img => `/product-images/${img.trim()}`)
               : []
           };
         });
 
         setProducts(processedData);
       } catch (error) {
-        console.error("Error reading Excel file:", error);
+        console.error("Error fetching Google Sheet data:", error);
       }
     };
 
