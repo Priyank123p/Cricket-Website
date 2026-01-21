@@ -14,50 +14,46 @@ const AboutUs = () => {
 
   return (
     <>
-      {/* 1. Top Banner */}
-      <div className="about-hero">
-        <motion.div
-          className="hero-bg"
-          style={{ y: yRange, scale: 1.1 }}
-        >
-          {/* Placeholder for Cricket Pitch / Bat Close-up */}
-          <img src={topBannerImage} alt="Cricket Pitch" />
-          <div className="hero-overlay"></div>
-        </motion.div>
-
-        <div className="container h-100">
-          <div className="row h-100 align-items-center">
-            <div className="col-lg-6 col-md-8">
-              <div className="hero-content text-start">
-                <motion.h1
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                  About
-                </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3, duration: 0.8 }}
-                >
-                  The Perfect Balance of Power & Precision
-                </motion.p>
-                <motion.button
-                  className="hero-btn"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => navigate('/product')}
-                >
-                  Explore Collection
-                  <div className="shine"></div>
-                </motion.button>
-              </div>
+      {/* 1. New E-Commerce Style Hero Section */}
+      <section className="ecommerce-hero">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6 order-2 order-lg-1">
+              <motion.div
+                className="hero-text-content"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <span className="hero-subtitle">Premium Cricket Gear</span>
+                <h1>WHERE CHAMPIONS <br /> <span className="highlight-text">ARE MADE</span></h1>
+                <p>
+                  Experience the perfect fusion of tradition and technology.
+                  Our bats are crafted for those who don't just play, but dominate.
+                </p>
+                <div className="hero-buttons">
+                  <button className="btn-primary-dark" onClick={() => navigate('/product')}>
+                    Shop Collection
+                  </button>
+                  <button className="btn-outline-dark" onClick={() => navigate('/contact')}>
+                    Contact Us
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+            <div className="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
+              <motion.div
+                className="hero-image-container"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <img src={topBannerImage} alt="Premium Cricket Bat" className="img-fluid hero-main-img" />
+              </motion.div>
             </div>
           </div>
         </div>
-
-      </div>
+      </section>
 
       {/* 2. Who We Are Section */}
       <section className="section who-we-are">

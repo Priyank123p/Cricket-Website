@@ -12,7 +12,7 @@
 }
 
 .header {
-    background-color: rgb(200 200 200 / 71%);
+    background-color: rgba(0, 0, 0, 0.842);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -73,7 +73,7 @@
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
-    color: #333;
+    color: #d4d4d4;
     /* Dark text for light background */
     transition: color 0.3s ease;
     position: relative;
@@ -126,16 +126,12 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #292929;
+    color: #e6e6e6;
     /* Darker contact text */
     font-size: 0.9rem;
     font-weight: 500;
     white-space: nowrap;
     transition: color 0.3s ease;
-}
-
-.header-contact-item:hover {
-    color: #000;
 }
 
 .header-contact-item svg {
@@ -144,8 +140,7 @@
 
 /* Cart Icon */
 .cart-icon-container {
-    color: #333;
-    /* Dark icon */
+    color: #e0e0e0;
     transition: color 0.3s ease;
     display: flex;
     align-items: center;

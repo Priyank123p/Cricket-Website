@@ -3,114 +3,104 @@
     overflow: hidden;
 }
 
-.about-hero {
-    position: relative;
-    height: 80vh;
+/* 1. New E-Commerce Hero */
+.ecommerce-hero {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+    /* Light, clean background */
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.hero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.696) 0%, rgba(0, 0, 0, 0.811) 90%);
-    z-index: 0;
-}
-
-.hero-content {
     position: relative;
-    z-index: 1;
-    padding: 20px;
-    text-align: left;
 }
 
-.hero-content h1 {
-    font-size: 5rem;
-    font-weight: 800;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    letter-spacing: 3px;
-    line-height: 1.1;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 300;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Glossy, Sports Brand Style Button */
-.hero-btn {
-    background: white;
-    color: black;
-    border: none;
-    padding: 16px 45px;
-    font-size: 1.2rem;
+.hero-subtitle {
+    display: inline-block;
+    font-size: 0.9rem;
     font-weight: 700;
-    border-radius: 5px;
-    clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0% 100%, 0% 20%);
-    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ff4757;
+    margin-bottom: 15px;
+    background: rgba(255, 71, 87, 0.1);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.hero-text-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #2f3542;
+    margin-bottom: 25px;
+}
+
+.highlight-text {
+    color: transparent;
+    -webkit-text-stroke: 1px #2f3542;
     position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
+}
+
+.hero-text-content p {
+    font-size: 1.1rem;
+    color: #747d8c;
+    margin-bottom: 40px;
+    max-width: 90%;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary-dark {
+    background: #2f3542;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 0;
+    /* Sharp edges for modern look */
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
-.hero-btn:hover {
-    transform: translateY(-3px);
+.btn-primary-dark:hover {
+    background: #ff4757;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 71, 87, 0.2);
+}
+
+.btn-outline-dark {
+    background: transparent;
+    color: #2f3542;
+    padding: 15px 40px;
+    border: 2px solid #2f3542;
+    border-radius: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+    background: #2f3542;
     color: white;
-    background: #ff4d00;
+    transform: translateY(-2px);
 }
 
-.shine {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, transparent, rgb(254, 227, 204), transparent);
-    transform: skewX(-20deg);
-    animation: shine 3s infinite;
+.hero-image-container {
+    position: relative;
+    z-index: 1;
 }
 
-@keyframes shine {
-    0% {
-        left: -100%;
-    }
-
-    20% {
-        left: 200%;
-    }
-
-    100% {
-        left: 200%;
-    }
+.hero-main-img {
+    border-radius: 20px;
+    box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.05);
+    /* Modern offset shadow */
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;
 }
 
 /* 2. Who We Are */
