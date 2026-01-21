@@ -8,7 +8,7 @@ import brandingImg from '../Img/Branding-IMG/WhatsApp Image 2026-01-12 at 5.15.2
 import productBanner from '../Img/AboutUs-IMG/Product-Banner.jpeg';
 import './Product.css';
 import * as XLSX from 'xlsx';
-import productDataFile from '../products.xlsx';
+
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -19,7 +19,7 @@ const Product = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(productDataFile);
+        const response = await fetch('/products.xlsx');
         const arrayBuffer = await response.arrayBuffer();
         const workbook = XLSX.read(arrayBuffer, { type: 'array' });
         const sheetName = workbook.SheetNames[0];
