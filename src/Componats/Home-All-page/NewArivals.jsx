@@ -64,7 +64,7 @@ const products = [
   },
   {
     id: 8,
-    name: "Chevron Bat Grip",
+    name: "Gloves",
     category: "",
     price: "₹299",
     image: Img7,
