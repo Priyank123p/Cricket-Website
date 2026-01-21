@@ -158,12 +158,12 @@ const NewArivals = () => {
                     ))}
                     <span className="rating-count">(12)</span>
                   </div>
-                  <div className="product-price">{product.price}</div>
+                  {/* <div className="product-price">{product.price}</div> */}
 
-                  <button className="add-btn" onClick={() => handleAddToCart(product)}>
+                  {/* <button className="add-btn" onClick={() => handleAddToCart(product)}>
                     <ShoppingCart size={18} />
                     Add to Cart
-                  </button>
+                  </button> */}
                 </div>
               </motion.div>
             ))}
