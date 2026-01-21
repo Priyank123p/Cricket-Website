@@ -1,8 +1,10 @@
 .product-page-container {
-    background-color: #f8f9fa; /* Light background */
+    background-color: #f8f9fa;
+    /* Light background */
     min-height: 100vh;
     padding-bottom: 4rem;
-    color: #333; /* Dark text */
+    color: #333;
+    /* Dark text */
 }
 
 /* Hero Banner */
@@ -11,7 +13,8 @@
     height: 600px;
     object-fit: fill;
     display: block;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    /* Lighter shadow */
 }
 
 .product-hero-banner {
@@ -26,7 +29,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)); /* Lighter overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+    /* Lighter overlay */
     pointer-events: none;
     z-index: 1;
 }
@@ -37,12 +41,54 @@
 
 @media (max-width: 768px) {
     .product-hero-banner {
-        height: auto;
+        height: 250px;
+        /* Fixed height for banner on mobile */
         padding: 0;
+        overflow: hidden;
     }
 
     .product-hero-banner img {
-        height: 200px;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .mobile-banner-text {
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 2;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .mobile-banner-text h1 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 0.2rem;
+    }
+
+    .mobile-banner-text p {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+        opacity: 0.9;
+    }
+
+    /* Filters on mobile */
+    .filter-sort-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-sort-container .d-flex {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .filter-select {
+        width: 100% !important;
+        /* Force full width on mobile */
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -54,7 +100,7 @@
     margin-bottom: 1.5rem;
     padding: 1rem;
     border: 1px solid #e0e0e0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .filter-select {
@@ -67,6 +113,7 @@
     outline: none;
     cursor: pointer;
 }
+
 .filter-select:focus {
     border-color: #c54039;
 }
@@ -90,7 +137,7 @@
     flex-direction: column;
     height: 100%;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 /* Image Wrapper */
@@ -101,7 +148,8 @@
     margin-bottom: 0.75rem;
     aspect-ratio: 1 / 1;
     /* Keep square */
-    background: #f4f4f4; /* Light grey background for images */
+    background: #f4f4f4;
+    /* Light grey background for images */
 }
 
 .product-img {
@@ -111,7 +159,8 @@
     padding: 0.5rem;
     /* Add internal padding so product doesn't touch edges */
     transition: transform 0.4s ease;
-    mix-blend-mode: multiply; /* Helps blend white bg images if needed */
+    mix-blend-mode: multiply;
+    /* Helps blend white bg images if needed */
 }
 
 /* Badges */
@@ -155,7 +204,8 @@
     /* Reduced size */
     font-weight: 700;
     margin-bottom: 0.2rem;
-    color: #121212; /* Dark Title */
+    color: #121212;
+    /* Dark Title */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -198,7 +248,8 @@
 .current-price {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #c54039; /* Brand color remains */
+    color: #c54039;
+    /* Brand color remains */
 }
 
 .old-price {
@@ -286,7 +337,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.8);
+    background: rgba(255, 255, 255, 0.8);
     color: #333;
     border: none;
     border-radius: 50%;
@@ -297,7 +348,7 @@
     justify-content: center;
     cursor: pointer;
     z-index: 10;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .slider-btn.prev {
@@ -327,7 +378,7 @@
     color: #333;
     margin: 3rem 0;
     border: 1px solid #eaeaea;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .branding-title {
@@ -336,6 +387,7 @@
     margin-bottom: 1rem;
     background: linear-gradient(to right, #c54039, #ff5722);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

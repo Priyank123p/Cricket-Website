@@ -7,6 +7,8 @@ import Product from './Componats/Product';
 import AboutUs from './Componats/AboutUs';
 import CotactUs from './Componats/CotactUs';
 import AddCart from './Componats/AddCart';
+import CricketBall from './Componats/CricketBall';
+import Accessories from './Componats/Accessories';
 
 import Loader from './Componats/Loader';
 import { CartProvider } from './Componats/Context/CartContext';
@@ -37,6 +39,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/product" element={<Product />} />
+              <Route path="/cricket-balls" element={<CricketBall />} />
+              <Route path="/accessories" element={<Accessories />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/contact" element={<CotactUs />} />
               <Route path="/cart" element={<AddCart />} />

@@ -24,7 +24,7 @@ const ExploreOurCollections = () => {
             id: 2,
             title: "Cricket Balls",
             image: BallImg,
-            link: "/product",
+            link: "/cricket-balls",
             description: "Match Ready",
             bgColor: "#f8f9fa",
             accentColor: "#0d6efd"
@@ -33,7 +33,7 @@ const ExploreOurCollections = () => {
             id: 3,
             title: "Accessorie",
             image: AccessoriesImg,
-            link: "/product",
+            link: "/accessories",
             description: "Essential Gear",
             bgColor: "#f8f9fa",
             accentColor: "#fd7e14"
