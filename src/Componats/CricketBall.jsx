@@ -4,8 +4,8 @@ import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Star, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCart } from './Context/CartContext';
-import productBanner from '../Img/AboutUs-IMG/Product-Banner.jpeg'; // Reusing banner
-import './Product.css'; // Reusing styles
+import productBanner from '../Img/AboutUs-IMG/CricketBall-Banner.png';
+import './Product.css';
 
 // Import Images
 import BallImg1 from '../Img/Cricket-Ball/Yallow-Ball.jpg';
@@ -69,7 +69,12 @@ const CricketBall = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <img src={productBanner} alt="Cricket Balls" className="img-fluid w-100 banner-img" />
+                <img
+                    src={productBanner}
+                    alt="Cricket Balls"
+                    className="img-fluid w-100"
+                    style={{ height: "350px", objectFit: "cover" }}
+                />
                 <div className="hero-overlay"></div>
                 <div className="mobile-banner-text">
                     <h1>Cricket Balls</h1>
