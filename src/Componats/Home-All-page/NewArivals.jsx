@@ -8,6 +8,9 @@ import Img1 from '../../Img/Product-IMG/New Pro Players Edition-IMG.png';
 import Img2 from '../../Img/Product-IMG/New Premium Players-IMG.png';
 import Img3 from '../../Img/Product-IMG/72 Black Edition-IMG.jpeg';
 import Img4 from '../../Img/Product-IMG/Ciel Fighter AK 47 hard tennis cricket bat-IMG.jpeg';
+import Img5 from '../../Img/Cricket-Ball/Yallow-Ball.jpg';
+import Img6 from '../../Img/Cricket-Ball/Red-Ball.jpg';
+import Img7 from '../../Img/Collection-IMG/ring-chevron-bat-grip_2.jpg';
 
 const products = [
   {
@@ -37,6 +40,34 @@ const products = [
     category: "",
     price: "₹3,000",
     image: Img4,
+  },
+  {
+    id: 5,
+    name: "Nivia Light Weight Cricket Tennis Ball",
+    category: "",
+    price: "₹499",
+    image: Img5,
+  },
+  {
+    id: 6,
+    name: "Nivia Heavy Weight Tennis Cricket Ball",
+    category: "",
+    price: "₹599",
+    image: Img6,
+  },
+  {
+    id: 7,
+    name: "Chevron Bat Grip",
+    category: "",
+    price: "₹299",
+    image: Img7,
+  },
+  {
+    id: 8,
+    name: "Chevron Bat Grip",
+    category: "",
+    price: "₹299",
+    image: Img7,
   },
 ];
 
@@ -90,7 +121,7 @@ const NewArivals = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="section-title">Most Selling Product</h2>
+              <h2 className="section-title">Our Product</h2>
               <p className="section-subtitle">SHOP PREMIUM CRICKET BATS AT JM SPORTS</p>
             </motion.div>
           </div>

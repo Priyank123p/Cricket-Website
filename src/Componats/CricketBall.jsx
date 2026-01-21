@@ -31,7 +31,6 @@ const CricketBall = () => {
             name: "Nivia Heavy Weight Tennis Cricket Ball",
             brand: "Nivia",
             price: "₹599",
-            oldPrice: "₹899",
             rating: 4.8,
             image: [BallImg2],
         }
