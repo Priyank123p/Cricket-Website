@@ -26,14 +26,54 @@ const Product = () => {
         const sheet = workbook.Sheets[sheetName];
         const jsonData = XLSX.utils.sheet_to_json(sheet);
 
-        // Map images to public folder path
-        const processedData = jsonData.map(item => ({
-          ...item,
-          // Handle multiple images separated by comma
-          image: item.image
-            ? item.image.toString().split(',').map(img => `/product-images/${img.trim()}`)
-            : []
-        }));
+        // Helper to get value case-insensitively
+        const getValue = (obj, key) => {
+          const foundKey = Object.keys(obj).find(k => k.toLowerCase() === key.toLowerCase());
+          return foundKey ? obj[foundKey] : undefined;
+        };
+
+        // Map images to public folder path and calculate prices
+        const processedData = jsonData.map(item => {
+          const rawPrice = getValue(item, 'price');
+          const rawDiscount = getValue(item, 'discount');
+          const rawImage = getValue(item, 'image');
+
+          const mrp = Number(rawPrice) || 0; // Base price from Excel (now treated as MRP)
+          const discount = Number(rawDiscount) || 0; // Discount percentage
+
+          let sellingPrice = mrp;
+          let displayOldPrice = null;
+
+          if (discount > 0) {
+            sellingPrice = mrp - (mrp * discount / 100);
+            displayOldPrice = '₹' + mrp.toLocaleString('en-IN');
+          }
+
+          const displayPrice = '₹' + Math.floor(sellingPrice).toLocaleString('en-IN');
+
+          return {
+            ...item,
+            // Normalize keys for the rest of the app
+            name: getValue(item, 'name'),
+            brand: getValue(item, 'brand'),
+            weight: getValue(item, 'weight'),
+            rating: getValue(item, 'rating'),
+            badge: getValue(item, 'badge'),
+
+            // Overwrite price with the calculated selling price for display/sorting
+            price: displayPrice,
+            // Set oldPrice dynamically
+            oldPrice: displayOldPrice,
+            // Keep the raw values for reference if needed
+            originalPrice: mrp,
+            discountPercentage: discount,
+
+            // Handle multiple images separated by comma
+            image: rawImage
+              ? rawImage.toString().split(',').map(img => `/product-images/${img.trim()}`)
+              : []
+          };
+        });
 
         setProducts(processedData);
       } catch (error) {
@@ -217,6 +257,11 @@ const ProductCard = ({ product, addToCart, index }) => {
             <div className="product-price-block">
               <span className="current-price">{product.price}</span>
               <span className="old-price">{product.oldPrice}</span>
+              {product.discountPercentage > 0 && (
+                <small className="text-success ms-2 fw-bold">
+                  {product.discountPercentage}% OFF
+                </small>
+              )}
             </div>
 
             <div className="product-rating">
@@ -246,7 +291,7 @@ const ProductCard = ({ product, addToCart, index }) => {
           )}
         </button>
       </div>
-    </motion.div>
+    </motion.div >
   );
 };
 
