@@ -172,18 +172,30 @@ ${baseMessage}
       </div>
 
       <div className="contact-content">
-        <div className="contact-info">
-          <div className="info-card">
-            <div className="icon-box">
-              <MapPin size={24} />
+        <div className="contact-left-side">
+          <div className="contact-info">
+            <div className="info-card">
+              <div className="icon-box">
+                <MapPin size={24} />
+              </div>
+              <h3>Address</h3>
+              <p>318 Shivalik Satyamev, Ambli - Bopal Rd, Crossroad, Bopal, Ahmedabad, Gujarat 380058</p>
             </div>
-            <h3>Address</h3>
-            <p>318 Shivalik Satyamev, Ambli - Bopal Rd, Crossroad, Bopal, Ahmedabad, Gujarat 380058</p>
+            {/* Email and Working Hours removed as per request */}
           </div>
 
-
-
-          {/* Email and Working Hours removed as per request */}
+          {/* 4. Google Map Section */}
+          <div className="map-section">
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1864.0330610898131!2d72.4761554981418!3d23.02635388768557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bfcf0e77423%3A0xddfa4b92626472c4!2sNewstar%20Infotech!5e1!3m2!1sen!2sin!4v1767953763907!5m2!1sen!2sin"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
         </div>
 
         {/* 3. Contact Form Section */}
@@ -243,19 +255,6 @@ ${baseMessage}
             <button type="submit" className="submit-btn">Submit</button>
           </form>
         </div>
-      </div>
-
-      {/* 4. Google Map Section */}
-      <div className="map-section">
-        <iframe
-          title="Google Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1864.0330610898131!2d72.4761554981418!3d23.02635388768557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bfcf0e77423%3A0xddfa4b92626472c4!2sNewstar%20Infotech!5e1!3m2!1sen!2sin!4v1767953763907!5m2!1sen!2sin"
-          width="100%"
-          height="450"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-        ></iframe>
       </div>
 
       <OrderSuccess
