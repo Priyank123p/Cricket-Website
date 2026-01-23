@@ -10,8 +10,8 @@ import './Product.css';
 // Import Images
 import BallImg1 from '../Img/Cricket-Ball/Yallow-Nivia.jpg';
 import BallImg2 from '../Img/Cricket-Ball/Red-Nivia.jpg';
-import BallImg3 from '../Img/Cricket-Ball/Singal-Yallow-Nivia.jpg';
-import BallImg4 from '../Img/Cricket-Ball/Singal-Red-Nivia.jpg';
+import BallImg3 from '../Img/Cricket-Ball/Singal-Yallow-Nivia.png';
+import BallImg4 from '../Img/Cricket-Ball/Singal-Red-Nivia.png';
 
 const CricketBall = () => {
     const { addToCart } = useCart();
