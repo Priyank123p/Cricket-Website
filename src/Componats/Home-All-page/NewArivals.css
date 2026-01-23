@@ -111,33 +111,7 @@
     transform: scale(1.08);
 }
 
-/* Wishlist Button */
-.wishlist-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: white;
-    border: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: all 0.2s ease;
-    opacity: 0;
-    transform: translateX(10px);
-    z-index: 2;
-}
-
-.wishlist-btn:hover {
-    background: #FF3A30;
-    color: white;
-}
-
-.new-arrival-card:hover .wishlist-btn {
+.new-arrival-card:hover {
     opacity: 1;
     transform: translateX(0);
 }
@@ -254,10 +228,6 @@
 @media (max-width: 1024px) {
     .background-text {
         font-size: 5rem;
-    }
-
-    .wishlist-btn {
-        display: none;
     }
 
     .add-btn {

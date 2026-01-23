@@ -57,6 +57,8 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
+        right: 20px;
+        /* Ensure text doesn't overflow horizontally */
         z-index: 2;
         color: #fff;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
@@ -83,12 +85,17 @@
     .filter-sort-container .d-flex {
         width: 100%;
         flex-direction: column;
+        gap: 0.5rem !important;
+        /* Explicit gap control */
     }
 
     .filter-select {
         width: 100% !important;
         /* Force full width on mobile */
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
+        /* Remove margin as gap handles it */
+        padding: 0.6rem;
+        /* Larger touch target */
     }
 }
 
@@ -330,6 +337,107 @@
     .product-card:hover {
         transform: none;
     }
+
+    /* Better Mobile Layout for Price/Rating/Discount */
+    .product-meta-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .product-price-block {
+        width: 100%;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+        align-items: center;
+    }
+
+    .current-price {
+        font-size: 1rem;
+        order: 1;
+    }
+
+    .old-price {
+        font-size: 0.8rem;
+        order: 2;
+        margin-left: 4px;
+    }
+
+    /* Discount Percentage */
+    .product-price-block small {
+        order: 3;
+        font-size: 0.75rem;
+        background: #e9f7ef;
+        color: #28a745;
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin-left: auto !important;
+        /* Push to right or just gap */
+    }
+
+    /* Star Ratings */
+    .product-rating {
+        width: 100%;
+        margin-top: 2px;
+    }
+
+    /* Ensure stars are visible but not too big */
+    .product-rating svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .rating-text {
+        font-size: 0.7rem;
+        margin-left: 4px;
+    }
+
+    /* Branding Section Mobile */
+    .branding-section {
+        padding: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .branding-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .branding-text {
+        text-align: center;
+        font-size: 0.95rem;
+    }
+
+    .branding-img-container {
+        margin-top: 1rem;
+    }
+
+    .branding-content {
+        order: 1;
+        /* Text first, but maybe image first? standard is image top or bottom. let's keep text top for now or default */
+    }
+}
+
+/* Extra Small Mobile (e.g. iPhone SE, small androids) */
+@media (max-width: 375px) {
+    .product-title {
+        font-size: 0.8rem;
+    }
+
+    .current-price {
+        font-size: 0.9rem;
+    }
+
+    .btn-add-cart {
+        font-size: 0.7rem;
+        padding: 0.4rem;
+    }
+
+    .product-badge {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
 }
 
 /* Slider Controls */
@@ -393,6 +501,7 @@
 
 .branding-text {
     color: #555;
+    line-height: 1.6;
 }
 
 /* Trust Section */
@@ -408,6 +517,7 @@
     align-items: center;
     gap: 0.5rem;
     color: #555;
+    text-align: center;
 }
 
 .trust-icon {
@@ -417,4 +527,14 @@
 .trust-text {
     font-size: 0.9rem;
     font-weight: 500;
+}
+
+@media (max-width: 576px) {
+    .trust-item {
+        margin-bottom: 1rem;
+    }
+
+    .trust-text {
+        font-size: 0.8rem;
+    }
 }

@@ -144,9 +144,9 @@ const NewArivals = () => {
                 <div className="image-wrapper">
                   <img src={product.image} alt={product.name} className="product-image" />
 
-                  <button className="wishlist-btn" aria-label="Add to Wishlist">
+                  {/* <button className="wishlist-btn" aria-label="Add to Wishlist">
                     <Heart size={20} />
-                  </button>
+                  </button> */}
                 </div>
 
                 <div className="product-details">
