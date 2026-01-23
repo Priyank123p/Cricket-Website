@@ -9,6 +9,7 @@ import './Product.css';
 
 // Import Images
 import AccessorieImg from '../Img/Collection-IMG/ring-chevron-bat-grip_2.jpg';
+import GlovesImg from '../Img/Collection-IMG/Gloves.png';
 
 const Accessories = () => {
     const { addToCart } = useCart();
@@ -25,7 +26,7 @@ const Accessories = () => {
             rating: 4.7,
             image: [AccessorieImg],
             description: "High quality chevron grip for cricket bats.",
-            colors: ["Pink", "Blue", "Green"]
+            colors: ["Pink", "Black", "Green"]
         },
         {
             id: "acc-2",
@@ -33,8 +34,9 @@ const Accessories = () => {
             brand: "",
             price: "₹299",
             rating: 4.6,
-            image: [AccessorieImg],
-            description: "Pro quality batting gloves."
+            image: [GlovesImg],
+            description: "Pro quality batting gloves.",
+            colors: ["Black", "Grey", "Purpel", "Blue"]
         }
     ];
 
@@ -210,8 +212,11 @@ const ProductCard = ({ product, addToCart, index }) => {
                                     // Map color names to hex codes for display
                                     const colorMap = {
                                         "Pink": "#ff4d91",
-                                        "Blue": "#0d6efd",
+                                        "Black": "#000000",
                                         "Green": "#53e73c",
+                                        "Grey": "#808080",
+                                        "Purpel": "#800080",
+                                        "Blue": "#0000ff"
                                     };
 
                                     const displayColor = colorMap[color] || color;

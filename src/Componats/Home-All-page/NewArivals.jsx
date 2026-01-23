@@ -8,9 +8,10 @@ import Img1 from '../../Img/Product-IMG/New Pro Players Edition-IMG.png';
 import Img2 from '../../Img/Product-IMG/New Premium Players-IMG.png';
 import Img3 from '../../Img/Product-IMG/72 Black Edition-IMG.jpeg';
 import Img4 from '../../Img/Product-IMG/Ciel Fighter AK 47 hard tennis cricket bat-IMG.jpeg';
-import Img5 from '../../Img/Cricket-Ball/Yallow-Ball.jpg';
-import Img6 from '../../Img/Cricket-Ball/Red-Ball.jpg';
+import Img5 from '../../Img/Cricket-Ball/Singal-Yallow-Nivia.jpg';
+import Img6 from '../../Img/Cricket-Ball/Singal-Red-Nivia.jpg';
 import Img7 from '../../Img/Collection-IMG/ring-chevron-bat-grip_2.jpg';
+import Img8 from '../../Img/Collection-IMG/Gloves.png';
 
 const products = [
   {
@@ -67,7 +68,7 @@ const products = [
     name: "Gloves",
     category: "",
     price: "₹299",
-    image: Img7,
+    image: Img8,
   },
 ];
 

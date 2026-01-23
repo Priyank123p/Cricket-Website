@@ -8,8 +8,10 @@ import productBanner from '../Img/AboutUs-IMG/CricketBall-Banner.png';
 import './Product.css';
 
 // Import Images
-import BallImg1 from '../Img/Cricket-Ball/Yallow-Ball.jpg';
-import BallImg2 from '../Img/Cricket-Ball/Red-Ball.jpg';
+import BallImg1 from '../Img/Cricket-Ball/Yallow-Nivia.jpg';
+import BallImg2 from '../Img/Cricket-Ball/Red-Nivia.jpg';
+import BallImg3 from '../Img/Cricket-Ball/Singal-Yallow-Nivia.jpg';
+import BallImg4 from '../Img/Cricket-Ball/Singal-Red-Nivia.jpg';
 
 const CricketBall = () => {
     const { addToCart } = useCart();
@@ -22,7 +24,7 @@ const CricketBall = () => {
             id: "ball-1",
             name: "Nivia Light Weight Cricket Tennis Ball",
             brand: "Nivia",
-            price: "₹499",
+            price: "₹750",
             rating: 4.5,
             image: [BallImg1],
         },
@@ -30,9 +32,25 @@ const CricketBall = () => {
             id: "ball-2",
             name: "Nivia Heavy Weight Tennis Cricket Ball",
             brand: "Nivia",
-            price: "₹599",
+            price: "₹870",
             rating: 4.8,
             image: [BallImg2],
+        },
+        {
+            id: "ball-3",
+            name: "Nivia Light Weight Cricket Tennis Ball",
+            brand: "Nivia",
+            price: "₹65",
+            rating: 4.8,
+            image: [BallImg3],
+        },
+        {
+            id: "ball-4",
+            name: "Nivia Heavy Weight Tennis Cricket Ball",
+            brand: "Nivia",
+            price: "₹75",
+            rating: 4.8,
+            image: [BallImg4],
         }
     ];
 
@@ -91,7 +109,7 @@ const CricketBall = () => {
                 >
                     <div className="d-flex gap-3 flex-wrap">
                         <select className="filter-select" style={{ width: '150px' }} onChange={(e) => handleFilterChange('priceRange', e.target.value)}>
-                            <option value="All">Price Range</option>
+                            <option value="All">All Price</option>
                             <option value="Under 500">Under ₹500</option>
                             <option value="500 - 1000">₹500 - ₹1,000</option>
                             <option value="Above 1000">Above ₹1,000</option>
