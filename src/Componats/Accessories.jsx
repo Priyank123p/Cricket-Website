@@ -24,7 +24,8 @@ const Accessories = () => {
             price: "₹299",
             rating: 4.7,
             image: [AccessorieImg],
-            description: "High quality chevron grip for cricket bats."
+            description: "High quality chevron grip for cricket bats.",
+            colors: ["Pink", "Blue", "Green"]
         },
         {
             id: "acc-2",
@@ -34,15 +35,6 @@ const Accessories = () => {
             rating: 4.6,
             image: [AccessorieImg],
             description: "Pro quality batting gloves."
-        },
-        {
-            id: "acc-3",
-            name: "Cricket Helmet",
-            brand: "",
-            price: "₹299",
-            rating: 4.9,
-            image: [AccessorieImg],
-            description: "High impact resistance helmet."
         }
     ];
 
@@ -128,6 +120,7 @@ const ProductCard = ({ product, addToCart, index }) => {
     const [loading, setLoading] = useState(false);
     const [added, setAdded] = useState(false);
     const [currentImgIndex, setCurrentImgIndex] = useState(0);
+    const [selectedColor, setSelectedColor] = useState(product.colors ? product.colors[0] : null);
 
     const images = Array.isArray(product.image) ? product.image : (product.image ? [product.image] : []);
     const hasMultipleImages = images.length > 1;
@@ -147,7 +140,15 @@ const ProductCard = ({ product, addToCart, index }) => {
     const handleAddToCart = () => {
         setLoading(true);
         setTimeout(() => {
-            addToCart(product);
+            // Include color if product has colors
+            const itemToAdd = product.colors ? {
+                ...product,
+                id: `${product.id}-${selectedColor}`, // Unique ID for variant
+                name: `${product.name} (${selectedColor})`, // Helper for Cart UI
+                selectedColor: selectedColor
+            } : product;
+
+            addToCart(itemToAdd);
             setLoading(false);
             setAdded(true);
             setTimeout(() => setAdded(false), 2000);
@@ -199,6 +200,61 @@ const ProductCard = ({ product, addToCart, index }) => {
                             <span className="rating-text">({product.rating})</span>
                         </div>
                     </div>
+
+                    {/* Color Selection UI */}
+                    {product.colors && (
+                        <div className="mb-2">
+                            <span style={{ fontSize: '0.85rem', fontWeight: 600, marginRight: '5px' }}>Color:</span>
+                            <div className="d-flex gap-2 mt-1 align-items-center">
+                                {product.colors.map((color) => {
+                                    // Map color names to hex codes for display
+                                    const colorMap = {
+                                        "Pink": "#ff4d91",
+                                        "Blue": "#0d6efd",
+                                        "Green": "#53e73c",
+                                    };
+
+                                    const displayColor = colorMap[color] || color;
+                                    const isSelected = selectedColor === color;
+
+                                    return (
+                                        <button
+                                            key={color}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                e.preventDefault();
+                                                setSelectedColor(color);
+                                            }}
+                                            className="rounded-circle d-flex justify-content-center align-items-center p-0 border-0"
+                                            style={{
+                                                width: '24px',
+                                                height: '24px',
+                                                backgroundColor: isSelected ? 'transparent' : displayColor,
+                                                cursor: 'pointer',
+                                                border: isSelected ? `1px solid ${displayColor}` : 'none',
+                                                boxShadow: isSelected ? `0 0 0 1px ${displayColor}` : 'none', // Double border effect
+                                                transition: 'all 0.2s ease',
+                                                position: 'relative'
+                                            }}
+                                            title={color}
+                                        >
+                                            {isSelected && (
+                                                <span
+                                                    className="rounded-circle"
+                                                    style={{
+                                                        width: '16px',
+                                                        height: '16px',
+                                                        backgroundColor: displayColor,
+                                                        display: 'block'
+                                                    }}
+                                                />
+                                            )}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 <button
