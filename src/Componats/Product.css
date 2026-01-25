@@ -76,6 +76,22 @@
         opacity: 0.9;
     }
 
+    @media (max-width: 480px) {
+        .mobile-banner-text {
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+        }
+
+        .mobile-banner-text h1 {
+            font-size: 1.5rem;
+        }
+
+        .mobile-banner-text p {
+            font-size: 0.8rem;
+        }
+    }
+
     /* Filters on mobile */
     .filter-sort-container {
         flex-direction: column;

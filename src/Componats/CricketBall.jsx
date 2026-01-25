@@ -7,7 +7,6 @@ import { useCart } from './Context/CartContext';
 import productBanner from '../Img/AboutUs-IMG/CricketBall-Banner.png';
 import './Product.css';
 
-// Import Images
 import BallImg1 from '../Img/Cricket-Ball/Yallow-Nivia.jpg';
 import BallImg2 from '../Img/Cricket-Ball/Red-Nivia.jpg';
 import BallImg3 from '../Img/Cricket-Ball/Singal-Yallow-Nivia.png';

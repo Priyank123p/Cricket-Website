@@ -52,3 +52,37 @@
     letter-spacing: 1px;
     font-style: italic;
 }
+
+@media (max-width: 768px) {
+    .loader-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .bat-container img {
+        width: 120px;
+    }
+
+    .brand-name {
+        font-size: 2.2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .bat-container img {
+        width: 100px;
+    }
+
+    .brand-name {
+        font-size: 1.8rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+}
