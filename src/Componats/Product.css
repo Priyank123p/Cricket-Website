@@ -554,3 +554,16 @@
         font-size: 0.8rem;
     }
 }
+
+/* Mobile Product Grid Optimization */
+@media (max-width: 576px) {
+    .product-page-container .container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .g-4 {
+        --bs-gutter-x: 0.5rem;
+        --bs-gutter-y: 0.5rem;
+    }
+}

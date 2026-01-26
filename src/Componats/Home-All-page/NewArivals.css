@@ -248,7 +248,7 @@
 @media (max-width: 600px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        gap: 8px;
     }
 
     .background-text {
@@ -261,7 +261,7 @@
     }
 
     .new-arrivals-section {
-        padding: 3rem 1rem;
+        padding: 3rem 0.5rem;
     }
 
     /* Mobile Card Optimizations */
