@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Crown, Zap, Scale, Hammer, Truck, ShieldCheck, MessageCircle, Repeat, MoveRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -90,23 +91,43 @@ const Home = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              Experience the next generation of cricket equipment.
-              Used by legends, designed for champions. elevate your game today.
+              Professional Grade Cricket Bats trusted by 10,000+ players.
+              Hand-crafted English Willow for explosive power.
             </motion.p>
 
             <motion.div
-              className="stats-row"
+              className="hero-features-grid"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <div className="stat-item">
-                <span className="stat-number">5.0+</span>
-                <span className="stat-label">Willow Grade</span>
+              <div className="feature-item">
+                <Crown className="feature-icon" size={24} />
+                <div className="feature-text">
+                  <span className="feature-title">5.0+</span>
+                  <span className="feature-subtitle">Kashmir Willow</span>
+                </div>
               </div>
-              <div className="stat-item">
-                <span className="stat-number">25%</span>
-                <span className="stat-label">More Power</span>
+              <div className="feature-item">
+                <Zap className="feature-icon" size={24} />
+                <div className="feature-text">
+                  <span className="feature-title">25%</span>
+                  <span className="feature-subtitle">More Power</span>
+                </div>
+              </div>
+              <div className="feature-item">
+                <Scale className="feature-icon" size={24} />
+                <div className="feature-text">
+                  <span className="feature-title">Balance</span>
+                  <span className="feature-subtitle">Perfect Feel</span>
+                </div>
+              </div>
+              <div className="feature-item">
+                <Hammer className="feature-icon" size={24} />
+                <div className="feature-text">
+                  <span className="feature-title">Finish</span>
+                  <span className="feature-subtitle">Match Ready</span>
+                </div>
               </div>
             </motion.div>
 
@@ -130,6 +151,8 @@ const Home = () => {
             <img src={CricketerImg} alt="Rishab Pant" className="hero-model-img" />
           </motion.div>
         </div>
+
+
       </div>
 
       {/* Auto Slider Section */}
