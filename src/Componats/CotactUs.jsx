@@ -117,7 +117,7 @@ ${baseMessage}
 
         return {
           name: item.name,
-          image_url: item.image,
+          image_url: Array.isArray(item.image) ? item.image[0] : item.image,
           units: item.quantity || 1,
           price: price.toFixed(2)
         };

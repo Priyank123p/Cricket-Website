@@ -5,7 +5,7 @@ import './NewArivals.css';
 import { useCart } from '../Context/CartContext';
 
 import Img1 from '../../Img/Product-IMG/New Pro Players Edition-IMG.png';
-import Img2 from '../../Img/Product-IMG/Hulk Hole Bat-IMG2.JPG';
+import Img2 from '../../Img/Product-IMG/Hulk Hole Bat-IMG3.JPG';
 import Img3 from '../../Img/Product-IMG/72 Black Edition-IMG.jpeg';
 import Img4 from '../../Img/Product-IMG/Ciel Fighter AK 47 hard tennis cricket bat-IMG.jpeg';
 import Img5 from '../../Img/Cricket-Ball/Singal-Yallow-Nivia.png';

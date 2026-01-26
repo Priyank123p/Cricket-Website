@@ -29,7 +29,7 @@ const AddCart = () => {
             ) : (
               cartItems.map((item) => (
                 <div key={item.id} className="cart-item">
-                  <img src={item.image} alt={item.name} className="cart-item-img" />
+                  <img src={Array.isArray(item.image) ? item.image[0] : item.image} alt={item.name} className="cart-item-img" />
                   <div className="cart-item-details">
                     <h3 className="cart-item-name">{item.name}</h3>
                     <p className="cart-item-price">{item.price}</p>
