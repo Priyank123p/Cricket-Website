@@ -180,7 +180,7 @@ const Home = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="promo-slide-content republic-day-slide">
+            <div className="promo-slide-content">
               <div className="slide-image-container"></div>
               <div className="slide-text-container">
                 <h2 className="slide-title">KASHMIR WILLOW BATS</h2>

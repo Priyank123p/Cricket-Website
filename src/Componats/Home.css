@@ -454,30 +454,3 @@ body {
         font-size: 1.2rem;
     }
 }
-
-/* --- Republic Day Theme --- */
-.republic-day-slide .slide-text-container {
-    background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
-    color: #000080;
-}
-
-.republic-day-slide .slide-title {
-    color: #000080;
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
-}
-
-.republic-day-slide .slide-offer-box {
-    background: #000080;
-    color: #FFFFFF;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-}
-
-.republic-day-slide .slide-shop-btn {
-    background: #000080;
-    color: #FFFFFF;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.republic-day-slide .slide-shop-btn:hover {
-    background: #1a1a99;
-}
