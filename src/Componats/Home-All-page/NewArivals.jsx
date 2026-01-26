@@ -151,7 +151,7 @@ const NewArivals = () => {
                 </div>
 
                 <div className="product-details">
-                  <div className="product-category">{product.category || "Cricket Bat"}</div>
+                  <div className="product-category">{product.category}</div>
                   <h3 className="product-name">{product.name}</h3>
                   <div className="star-rating">
                     {[...Array(5)].map((_, i) => (
