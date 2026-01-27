@@ -332,7 +332,6 @@
     .why-choose-us {
         position: relative;
         overflow: hidden;
-        /* Ensure pseudo-element doesn't overflow */
     }
 
     .why-choose-us::before {

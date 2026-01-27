@@ -51,7 +51,6 @@
     .feature-card {
         padding: 15px;
         background: #f9f9f9;
-        /* Slight background to separate cards on mobile */
         margin-bottom: 10px;
         border: 1px solid #eee;
     }

@@ -74,7 +74,6 @@
     font-size: 1rem;
     font-weight: 600;
     color: #d4d4d4;
-    /* Dark text for light background */
     transition: color 0.3s ease;
     position: relative;
 }
@@ -118,7 +117,6 @@
     gap: 2rem;
     margin-right: 1.5rem;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
-    /* Adjusted border color */
     padding-right: 1.5rem;
 }
 
@@ -163,7 +161,6 @@
     display: none;
     cursor: pointer;
     color: #ffffff;
-    /* Dark icon */
 }
 
 .mobile-contact-info {

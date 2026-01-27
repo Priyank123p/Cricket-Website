@@ -41,12 +41,10 @@
 
 .footer-col-links {
     grid-column: span 12;
-    /* Full width on mobile */
 }
 
 .footer-col-contact {
     grid-column: span 12;
-    /* Full width on mobile */
 }
 
 /* Responsive Grid */
@@ -236,7 +234,6 @@
     padding-top: 2rem;
     display: flex;
     flex-direction: column;
-    /* Stack on mobile */
     align-items: center;
     gap: 1rem;
     text-align: center;
@@ -292,7 +289,6 @@
         flex-direction: column;
         padding: 0;
         text-align: left;
-        /* Switch to left align for cleaner look */
         gap: 0;
     }
 
@@ -322,7 +318,6 @@
 
     .contact-item {
         justify-content: flex-start;
-        /* Align icon and text to left */
         align-items: flex-start;
     }
 
@@ -340,7 +335,6 @@
     .footer-links {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* 2 columns for links to save space */
         gap: 10px;
     }
 

@@ -2,9 +2,7 @@
     padding: 3rem 2rem 3rem 2rem;
     min-height: 80vh;
     background-color: #f9fafb;
-    /* Light background */
     color: #1f2937;
-    /* Dark text */
 }
 
 .cart-container {
@@ -19,7 +17,6 @@
     margin-bottom: 40px;
     font-weight: 700;
     color: #111827;
-    /* Dark title */
 }
 
 .cart-content {
@@ -32,7 +29,6 @@
 /* Cart Items Section */
 .cart-items-container {
     background: #ffffff;
-    /* White card background */
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     padding: 20px;
@@ -52,7 +48,6 @@
 
 .continue-shopping-btn {
     background-color: #3b82f6;
-    /* Accent color */
     color: white;
     border: none;
     padding: 12px 24px;
@@ -72,7 +67,6 @@
     align-items: center;
     padding: 20px 0;
     border-bottom: 1px solid #e5e7eb;
-    /* Light border */
 }
 
 .cart-item:last-child {
@@ -85,7 +79,6 @@
     object-fit: contain;
     margin-right: 20px;
     background: #f3f4f6;
-    /* Light gray image background */
     border-radius: 8px;
     padding: 5px;
 }
@@ -98,14 +91,12 @@
     font-size: 1.1rem;
     font-weight: 600;
     color: #111827;
-    /* Dark name */
     margin-bottom: 5px;
 }
 
 .cart-item-price {
     font-size: 1rem;
     color: #4b5563;
-    /* Gray price */
     margin-bottom: 10px;
 }
 
@@ -124,12 +115,9 @@
     height: 32px;
     border-radius: 50%;
     border: 1px solid #d1d5db;
-    /* Light border */
     background: #f9fafb;
-    /* Light button bg */
     cursor: pointer;
     color: #374151;
-    /* Dark icon */
     transition: all 0.2s;
 }
 
@@ -156,7 +144,6 @@
 .remove-btn {
     background: transparent;
     color: #ef4444;
-    /* Red for remove */
     border: 1px solid #ef4444;
     padding: 8px 16px;
     border-radius: 20px;
@@ -173,7 +160,6 @@
 /* Cart Summary Section */
 .cart-summary {
     background: #ffffff;
-    /* White card background */
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     padding: 30px;
@@ -210,7 +196,6 @@
     width: 100%;
     padding: 15px;
     background-color: #111827;
-    /* Dark button for contrast on white */
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -244,7 +229,6 @@
 
     .cart-summary {
         position: static;
-        /* In case it was sticky */
     }
 }
 

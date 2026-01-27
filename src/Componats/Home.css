@@ -29,8 +29,6 @@ body {
     justify-content: flex-start;
     overflow: hidden;
     background: #ffffff;
-    /* Changed to white */
-    /* Removed dark gradients */
 }
 
 /* Background Geometric Grid */
@@ -76,7 +74,6 @@ body {
     line-height: 0.95;
     text-transform: uppercase;
     color: #0f172a;
-    /* Changed to dark color */
     margin-bottom: 2rem;
     font-style: italic;
 }
@@ -84,14 +81,12 @@ body {
 .main-headline .highlight-text {
     color: transparent;
     -webkit-text-stroke: 2px #ff4d00;
-    /* Adjusted stroke color if needed, kept orange */
     position: relative;
 }
 
 .description-text {
     font-size: 1.1rem;
     color: #475569;
-    /* Changed to slate-600 */
     max-width: 500px;
     line-height: 1.6;
     margin-bottom: 3rem;
@@ -259,7 +254,6 @@ body {
     .trust-item {
         font-size: 0.8rem;
         width: 45%;
-        /* 2 items per row */
         justify-content: center;
     }
 
