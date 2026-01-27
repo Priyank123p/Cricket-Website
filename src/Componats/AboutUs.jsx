@@ -26,7 +26,7 @@ const AboutUs = () => {
                 transition={{ duration: 0.8 }}
               >
                 <span className="hero-subtitle">Premium Cricket Gear</span>
-                <h1>WHERE CHAMPIONS <br /> <span className="highlight-text">ARE MADE</span></h1>
+                <h1>WHERE CHAMPIONS <br /> ARE MADE</h1>
                 <p>
                   Experience the perfect fusion of tradition and technology.
                   Our bats are crafted for those who don't just play, but dominate.

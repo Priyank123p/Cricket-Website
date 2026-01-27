@@ -7,7 +7,6 @@
 .ecommerce-hero {
     padding: 100px 0;
     background-color: #f8f9fa;
-    /* Light, clean background */
     overflow: hidden;
     position: relative;
 }
@@ -33,12 +32,6 @@
     margin-bottom: 25px;
 }
 
-.highlight-text {
-    color: transparent;
-    -webkit-text-stroke: 1px #2f3542;
-    position: relative;
-}
-
 .hero-text-content p {
     font-size: 1.1rem;
     color: #747d8c;
@@ -58,7 +51,6 @@
     padding: 15px 40px;
     border: none;
     border-radius: 0;
-    /* Sharp edges for modern look */
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -97,7 +89,6 @@
 .hero-main-img {
     border-radius: 20px;
     box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.05);
-    /* Modern offset shadow */
     max-height: 500px;
     width: 100%;
     object-fit: cover;
@@ -108,11 +99,11 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #ffffff;
+    color: #333333;
 }
 
 .who-we-are p {
-    color: #acacac;
+    color: #686868;
     line-height: 1.8;
     font-size: 1.1rem;
 }
