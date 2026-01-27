@@ -123,18 +123,26 @@
 }
 
 .header-contact-item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     color: #e6e6e6;
-    /* Darker contact text */
     font-size: 0.9rem;
     font-weight: 500;
     white-space: nowrap;
     transition: color 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 99999;
+    pointer-events: auto;
 }
 
 .header-contact-item svg {
+    color: #ff5825;
+}
+
+.header-contact-item:hover {
     color: #ff5825;
 }
 

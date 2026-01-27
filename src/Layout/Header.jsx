@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Search, ShoppingCart, Menu, X, Phone, Mail } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import './Header.css';
 import logo from '../Img/Logo/JM.png';
 import { useCart } from '../Componats/Context/CartContext';
@@ -42,30 +42,36 @@ const Header = () => {
 
           {/* Mobile Contact Info */}
           <div className="mobile-contact-info">
-            <div className="mobile-contact-item">
+            <a href="tel:+919714100109" className="mobile-contact-item">
               <Phone size={20} />
               <span>+91 97141 00109</span>
-            </div>
-            <div className="mobile-contact-item">
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jmsports196@gmail.com" target="_blank" rel="noopener noreferrer" className="mobile-contact-item">
               <Mail size={20} />
               <span>jmsports196@gmail.com</span>
-            </div>
+            </a>
+            <a href="https://www.google.com/maps?q=JM+Sports" target="_blank" rel="noopener noreferrer" className="mobile-contact-item">
+              <MapPin size={20} />
+              <span>Location</span>
+            </a>
           </div>
         </nav>
 
         {/* Right: Search & Cart */}
         <div className="header-right">
           <div className="header-contact-details">
-            <div className="header-contact-item">
+            <a href="tel:+919714100109" className="header-contact-item">
               <Phone size={16} />
               <span>+91 97141 00109</span>
-            </div>
-            <div className="header-contact-item">
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jmsports196@gmail.com" target="_blank" rel="noopener noreferrer" className="header-contact-item">
               <Mail size={16} />
               <span>jmsports196@gmail.com</span>
-            </div>
+            </a>
+            <a href="https://www.google.com/maps?q=JM+Sports" target="_blank" rel="noopener noreferrer" className="header-contact-item">
+              <MapPin size={20} />
+            </a>
           </div>
-
 
           <NavLink to="/cart" className="cart-icon-container">
             <ShoppingCart size={24} />
