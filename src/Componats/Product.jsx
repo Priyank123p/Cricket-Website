@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Star, Check, Filter, ArrowRight, ShieldCheck, Truck, RefreshCw, CreditCard, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCart } from './Context/CartContext';
 import brandingImg from '../Img/Branding-IMG/WhatsApp Image 2026-01-12 at 5.15.28 PM.jpeg';
-import productBanner from '../Img/AboutUs-IMG/Product-Banner.png';
+import productBanner from '../Img/AboutUs-IMG/Product-Banner.jpeg';
 import './Product.css';
 
 const Product = () => {
