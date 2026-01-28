@@ -172,33 +172,6 @@ ${baseMessage}
       </div>
 
       <div className="contact-content">
-        <div className="contact-left-side">
-          <div className="contact-info">
-            <div className="info-card">
-              <div className="icon-box">
-                <MapPin size={24} />
-              </div>
-              <h3>Address</h3>
-              <p>318 Shivalik Satyamev, Ambli - Bopal Rd, Crossroad, Bopal, Ahmedabad, Gujarat 380058</p>
-            </div>
-            {/* Email and Working Hours removed as per request */}
-          </div>
-
-          {/* 4. Google Map Section */}
-          <div className="map-section">
-            <iframe
-              title="Google Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4647.287771136115!2d72.47341387619626!3d23.02630267917125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bab78c5abd3%3A0x3e5121e968b906de!2sJM%20Sports!5e1!3m2!1sen!2sin!4v1769493862858!5m2!1sen!2sin"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
-
-        {/* 3. Contact Form Section */}
         <div className="contact-form-section">
           <div className="form-header">
             <h2>Get In Touch</h2>
@@ -254,6 +227,30 @@ ${baseMessage}
 
             <button type="submit" className="submit-btn">Submit</button>
           </form>
+        </div>
+
+        <div className="contact-left-side">
+          <div className="contact-info">
+            <div className="info-card">
+              <div className="icon-box">
+                <MapPin size={24} />
+              </div>
+              <h3>Address</h3>
+              <p>318 Shivalik Satyamev, Ambli - Bopal Rd, Crossroad, Bopal, Ahmedabad, Gujarat 380058</p>
+            </div>
+          </div>
+
+          <div className="map-section">
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4647.287771136115!2d72.47341387619626!3d23.02630267917125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bab78c5abd3%3A0x3e5121e968b906de!2sJM%20Sports!5e1!3m2!1sen!2sin!4v1769493862858!5m2!1sen!2sin"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
         </div>
       </div>
 
