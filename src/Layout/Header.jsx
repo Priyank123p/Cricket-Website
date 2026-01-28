@@ -68,7 +68,7 @@ const Header = () => {
               <Mail size={16} />
               <span>jmsports196@gmail.com</span>
             </a>
-            <a href="https://www.google.com/maps?q=JM+Sports" target="_blank" rel="noopener noreferrer" className="header-contact-item">
+            <a href="https://www.google.com/search?q=jm+sports&rlz=1C1YTUH_enIN1058IN1058&oq=&gs_lcrp=EgZjaHJvbWUqCQgBECMYJxjqAjIJCAAQIxgnGOoCMgkIARAjGCcY6gIyCQgCECMYJxjqAjIJCAMQIxgnGOoCMg8IBBAuGCcYxwEY6gIY0QMyDwgFEC4YJxivARjHARjqAjIJCAYQIxgnGOoCMgkIBxAjGCcY6gLSAQkyNzYxajBqMTWoAgiwAgHxBXEHrF9Vl8zp8QVxB6xfVZfM6Q&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener noreferrer" className="header-contact-item">
               <MapPin size={20} />
             </a>
           </div>

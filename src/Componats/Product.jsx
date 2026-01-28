@@ -213,8 +213,7 @@ const Product = () => {
         <div className="mb-5">
           <BrandingSection />
         </div>
-
-        {/* Trust Section */}
+        
         <TrustSection />
 
       </Container>
