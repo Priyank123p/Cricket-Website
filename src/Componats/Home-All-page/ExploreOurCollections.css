@@ -1,30 +1,48 @@
 .collections-section {
-    padding: 30px 0;
-    background-color: #ffffff;
+    padding: 80px 0;
+    background-color: #fcfcfc;
+    overflow: hidden;
+}
+
+.subtitle {
+    display: block;
+    color: #dc3545;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
 }
 
 .section-title {
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 2rem;
-    color: #333;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
 }
 
 .header-line {
     width: 60px;
     height: 4px;
     background: #dc3545;
+    border-radius: 2px;
     margin-top: 10px;
 }
 
 .collection-card {
     background: #fff;
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
 .card-bg {
@@ -33,19 +51,19 @@
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.5;
-    transition: opacity 0.4s ease;
-    z-index: 1;
+    opacity: 0.05;
+    z-index: 0;
 }
 
 .card-content-wrapper {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
+    width: 100%;
 }
 
 .card-image-box {
@@ -55,65 +73,83 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
 }
 
 .collection-product-img {
     max-height: 180px;
     max-width: 100%;
     object-fit: contain;
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .card-info {
     width: 100%;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-info h4 {
-    font-size: 1.25rem;
-    color: #222;
+    font-size: 1.35rem;
+    color: #1a1a1a;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.shop-btn-wrapper {
+    margin-top: auto;
+    width: 100%;
 }
 
 .shop-btn-link {
-    font-weight: 700;
-    font-size: 0.9rem;
+    font-weight: 600;
+    font-size: 0.95rem;
     text-transform: uppercase;
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    transition: gap 0.3s ease;
-}
-
-.collection-card:hover .shop-btn-link {
-    gap: 10px;
-}
-
-.card-image-wrapper {
-    height: 200px;
-    width: 100%;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    transition: transform 0.4s ease;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: inherit;
+    /* Will assume parent color */
 }
 
-.collection-card:hover .card-image-wrapper {
-    transform: scale(1.1);
+/* .arrow-icon removed as no specific styles needed */
+
+.collection-card .shop-btn-link {
+    text-decoration: none;
 }
 
-.collection-image {
-    max-height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.1));
-}
+/* Responsiveness */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
 
-.shop-link {
-    color: #555;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
+    .card-content-wrapper {
+        padding: 1.5rem;
+    }
 
-.collection-card:hover .shop-link {
-    color: #ff4d4d;
+    .card-image-box {
+        height: 160px;
+    }
+
+    .collection-product-img {
+        max-height: 140px;
+    }
 }

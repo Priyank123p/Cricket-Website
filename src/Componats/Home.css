@@ -448,3 +448,58 @@ body {
         font-size: 1.2rem;
     }
 }
+
+/* Kashmir Promo Slide */
+.kashmir-slide {
+    flex-direction: row-reverse;
+    background: #0f172a;
+}
+
+.kashmir-text {
+    background: #074885;
+    margin-left: 0;
+    margin-right: -20%;
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+    z-index: 10;
+}
+
+.kashmir-slide .slide-title {
+    color: #ffffff;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.kashmir-slide .slide-offer-box {
+    background: #ffffff;
+    color: #074885;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.kashmir-btn {
+    background: #ffffff;
+    color: #074885;
+}
+
+.kashmir-btn:hover {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.kashmir-image {
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 1024px) {
+    .kashmir-slide {
+        flex-direction: column;
+    }
+
+    .kashmir-text {
+        margin-right: 0;
+        clip-path: none;
+        width: 100%;
+        padding: 3rem 1rem;
+    }
+}

@@ -13,6 +13,7 @@ import NewArivals from './Home-All-page/NewArivals';
 import HomeSectionBaner from './Home-All-page/HomeSectionBaner';
 
 import CricketerImg from '../Img/Cricketer-IMG/Branding-3.jpg';
+import BatImg from '../Img/Product-IMG/New Premium Players-IMG.png';
 import ExploreOurCollections from './Home-All-page/ExploreOurCollections';
 
 const Home = () => {
@@ -180,15 +181,15 @@ const Home = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="promo-slide-content">
-              <div className="slide-image-container"></div>
-              <div className="slide-text-container">
+            <div className="promo-slide-content kashmir-slide">
+              <div className="slide-image-container kashmir-image" style={{ backgroundImage: `url(${BatImg})` }}></div>
+              <div className="slide-text-container kashmir-text">
                 <h2 className="slide-title">KASHMIR WILLOW BATS</h2>
                 <div className="slide-offer-box">
                   <h3>Professional Grade Performance</h3>
                 </div>
                 <Link to="/product">
-                  <button className="slide-shop-btn">SHOP NOW</button>
+                  <button className="slide-shop-btn kashmir-btn">SHOP NOW</button>
                 </Link>
               </div>
             </div>
