@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './About.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Hammer, Star, ShieldCheck, Zap } from 'lucide-react';
-import aboutImage from '../Img/Branding-IMG/WhatsApp Image 2026-01-12 at 5.15.28 PM.jpeg';
+import aboutImage from '../Img/AboutUs-IMG/WhatsApp Image 2026-01-12 at 5.15.28 PM.jpeg';
 
 import topBannerImage from '../Img/AboutUs-IMG/About-Banner.jpeg';
 

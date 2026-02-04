@@ -4,7 +4,7 @@ import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Star, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCart } from './Context/CartContext';
-import productBanner from '../Img/AboutUs-IMG/BatGrip-Banner.png';
+import productBanner from '../Img/Cricket-Ball/BatGrip-Banner.png';
 import './Product.css';
 
 // Import Images

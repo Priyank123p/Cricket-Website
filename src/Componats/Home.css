@@ -344,7 +344,7 @@ body {
 /* match the image: left side image, right side blue content */
 .slide-image-container {
     flex: 1;
-    background: url('../Img/product-banner.jpg') no-repeat center center/cover;
+    background: url('../Img/HomeSectionBaner-IMG/product-banner.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;

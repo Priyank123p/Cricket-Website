@@ -13,7 +13,7 @@ import NewArivals from './Home-All-page/NewArivals';
 import HomeSectionBaner from './Home-All-page/HomeSectionBaner';
 
 import CricketerImg from '../Img/Cricketer-IMG/Branding-3.jpg';
-import BatImg from '../Img/Product-IMG/New Premium Players-IMG.png';
+import BatImg from '../Img/HomeSectionBaner-IMG/product-banner.jpg';
 import ExploreOurCollections from './Home-All-page/ExploreOurCollections';
 
 const Home = () => {

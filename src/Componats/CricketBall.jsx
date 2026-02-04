@@ -4,7 +4,7 @@ import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Star, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useCart } from './Context/CartContext';
-import productBanner from '../Img/AboutUs-IMG/CricketBall-Banner.png';
+import productBanner from '../Img/Cricket-Ball/CricketBall-Banner.png';
 import './Product.css';
 
 import BallImg1 from '../Img/Cricket-Ball/Yallow-Nivia.jpg';
