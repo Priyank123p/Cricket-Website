@@ -3,7 +3,7 @@ import './HomeSectionBaner.css';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-import SportsHeroImg from '../../Img/HomeSectionBaner-IMG/WhatsApp Image 2026-02-04 at 10.44.24 AM.jpeg';
+import SportsHeroImg from '../../Img/HomeSectionBaner-IMG/Sports-Hero2-IMG.jpeg';
 
 import CricketBallImg from '../../Img/Courser/pngimg.com - cricket_PNG95.png';
 
@@ -54,8 +54,6 @@ const HomeSectionBaner = () => {
                         <div className="visual-card main-card">
                             <img src={SportsHeroImg} alt="Sports Hero" className="hero-img" />
                         </div>
-
-
                     </div>
                 </div>
             </div>

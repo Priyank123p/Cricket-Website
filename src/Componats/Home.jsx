@@ -13,7 +13,7 @@ import NewArivals from './Home-All-page/NewArivals';
 import HomeSectionBaner from './Home-All-page/HomeSectionBaner';
 
 import CricketerImg from '../Img/Cricketer-IMG/Branding-3.jpg';
-import BatImg from '../Img/HomeSectionBaner-IMG/product-banner.jpg';
+import Slider2Img from '../Img/HomeSectionBaner-IMG/product-banner.jpg';
 import ExploreOurCollections from './Home-All-page/ExploreOurCollections';
 
 const Home = () => {
@@ -182,7 +182,7 @@ const Home = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className="promo-slide-content kashmir-slide">
-              <div className="slide-image-container kashmir-image" style={{ backgroundImage: `url(${BatImg})` }}></div>
+              <div className="slide-image-container kashmir-image" style={{ backgroundImage: `url(${Slider2Img})` }}></div>
               <div className="slide-text-container kashmir-text">
                 <h2 className="slide-title">KASHMIR WILLOW BATS</h2>
                 <div className="slide-offer-box">
